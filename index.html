@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Front End Practice</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="index.css" >
+</head>
+<body>
+	<div id="header" >
+		<div class="header-container" >
+			<a class="logo" href="index.html" >Json's Front End Practice</a>
+		</div>
+	</div>
+	<div id="leftnav" class="leftnav" >
+		<div class="leftnav-container" >
+			<h3>Navigator</h3>
+		</div>
+	</div>
+	<div id="content" class="content" >
+		<div id="main" >			
+			<div id="main-1" >
+				<h2 class="inline-block">首頁版面配置</h2>&nbsp;&nbsp;&nbsp;
+				<span>2017/7/31<span>
+				<h2>設定</h2>
+				<p>
+					<ul>
+						<li>header, leftnav : position : fixed</li>
+						<li>header高度, leftnav寬度, footer高度存成變數</li>
+						<li>content上側跟左側設margin, 高度用calc()算</li>
+						<li>main最小高度用content高度減footer高度, 似乎無法用footer { position: relative; bottom: 0px; } 的方式來做到</li>
+						<li>main-1, main-2用float來做2欄並排
+					</ul>
+				</p>				
+				<h2>小收穫:</h2>
+				<p>
+					<ul>
+						<li>使用float做排版時, 需明確給寬度否則無法達到並排的效果, 還要注意寬度若是剛好占滿(例如各50%), 還會被padding, margin影響到。不過padding可用 { box-sizing: border-box; } 來解決, margin則無法</li>
+						<li>父層div的長/寬若只有用min-/max-這種方式給, 則子層div的長寬想用父層的比例來給時, 似乎會沒有效果</li>
+					</ul>
+				</p>
+			</div>
+			<div id="main-2" >
+				<img id="img_layout_0" src="./image/layout_0.png" >
+			</div>
+		</div>
+		<div id="footer" >
+			<hr>
+			<div class="footer-container" >
+				&copy;2017&nbsp;&nbsp;&nbsp;stu900277@gmail.com
+			</div>
+		</div>
+	</div>
+</body>
+</html>
