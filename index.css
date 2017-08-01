@@ -53,12 +53,12 @@ hr{
 	padding-left: 16px;
 }
 #content{	
-	height: calc( 100vh - var(--header_h) );
-	margin-top: var(--header_h);
-	margin-left: var(--leftnav_w);
+	height: 100%;
+	padding-top: var(--header_h);
+	padding-left: var(--leftnav_w);
 }
 #main{	
-	min-height: calc( 100% - var(--footer_h) );
+	height: calc( 100% - var(--footer_h) );
 }
 #main-1{
 	width: 50%;
@@ -77,8 +77,6 @@ hr{
 	height: var(--footer_h);
 	color: #b3b3cc;
 	clear: both;
-	//position: relative;
-	//bottom: 0px;
 }
 .footer-container{
 	padding-top: 10px;
