@@ -1,6 +1,6 @@
 :root{
 	--header_h: 72px;
-	--leftnav_w: 200px;
+	--leftnav_w: 250px;
 	--footer_h: 70px;
 }
 *{
@@ -61,17 +61,15 @@ hr{
 	height: calc( 100% - var(--footer_h) );
 }
 #main-1{
-	width: 50%;
+	width: 60%;
 	padding: 20px 20px 40px 40px;
 	float: left;
 }
-#main-2{
-	width: 50%;
-	padding: 100px 40px 40px 10px;
+#rightbar{
+	width: 40%;
+	height: 100%;
+	/padding: 100px 40px 40px 10px;
 	float: left;
-}
-#img_layout_0{
-	width: 500px;
 }
 #footer{
 	height: var(--footer_h);
