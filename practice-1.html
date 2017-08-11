@@ -106,6 +106,30 @@
 					<li>&lt;colgroup&gt;, 裡面放&lt;col&gt;, 用來訂出column群組, 寫在&lt;caption&gt;之後, &lt;tr&gt;之前, <a href="https://www.w3schools.com/tags/tag_colgroup.asp" target="_blank">Example</a></li>
 					<li>&lt;thead&gt;, &lt;tfoot&gt;, &lt;tbody&gt;</li>
 				</ul>
+				<h1>Horizontal List</h1>
+				<ul class="hori-list">
+					<li><a>Home</a></li>
+					<li><a>News</a></li>
+					<li><a>Contact</a></li>
+					<li><a>About</a></li>
+				</ul>
+				<ul>
+					<li>li { float: left; } 做出橫列效果, li { display: inline; } 也行
+					<li>ul { overflow: hidden; }, 有這項設定才會讓ul的範圍展開(背景顏色範圍), 不太明白為什麼</li>
+					<li>樣式設定大多寫在a上, 且必須寫 a { display:block; }, a的padding才會把li撐開</li>
+				</ul>
+				<h1>iframe</h1>
+				<ul class="hori-list" >
+					<li><a href="index.html" target="iframe-1">Front End Practice</a></li>
+					<li><a href="https://jsonlin1995.github.io/Lumines/" target="iframe-1">Lumines</a></li>
+					<li><a href="https://jsonlin1995.blogspot.tw/" target="iframe-1">Blogger</a></li>
+				</ul>
+				<iframe id="iframe-1" name="iframe-1"></iframe>
+				<ul>
+					<li>iframe用來顯示其他網頁</li>
+					<li>a的target要用iframe的name屬性值</li>
+					<li>不知為啥, 大部分的公開網站無法在iframe裡顯示出來</li>
+				</ul>
 				<h1>奇奇怪怪的標籤</h1>
 				<p><span class="emphasize-1">&lt;address&gt;</span> element defines contact information (author/owner) of a document or an article</p>
 				<p><span class="emphasize-1">&lt;cite&gt;</span> element defines the title of a work</p>

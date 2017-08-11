@@ -12,8 +12,17 @@ body{
 	margin: 0px;
 	font-family: Trebuchet MS, Microsoft JhengHei;
 }
-a{
+a:link{
+	color: #0099ff;
 	text-decoration: none;
+}
+a:visited{
+	color: #0099ff;
+	text-decoration: none;
+}
+a:hover{
+	color: #0099ff;
+	text-decoration: underline;
 }
 hr{
 	margin: 0px;
@@ -35,10 +44,10 @@ hr{
 	padding-left: 16px;
 	padding-top: 20px;
 }
-.logo{
-	/font-family: Trebuchet MS;
+a.logo{
 	font-size: 37px;	
 	color: #ffffff;
+	text-decoration: none;
 }
 #leftnav{
 	width: var(--leftnav_w);	
@@ -59,6 +68,7 @@ hr{
 	padding-bottom: 2px;
 	padding-left: 16px;
 	display: block;
+	text-decoration: none;
 }
 .leftnav-container a:link{
 	color: #505050;
@@ -69,6 +79,7 @@ hr{
 .leftnav-container a:hover{
 	color: #000000;
 	background-color: #909090;
+	text-decoration: none;
 }
 .leftnav-container a:active{
 	color: #ffffff;
@@ -87,16 +98,7 @@ hr{
 	padding-top: var(--header_h);
 	padding-left: var(--leftnav_w);
 }
-#content a:link{
-	color: #0099ff;
-}
-#content a:visited{
-	color: #0099ff;
-}
-#content a:hover{
-	color: #0099ff;
-	text-decoration: underline;
-}
+
 #main{	
 	height: calc( 100% - var(--footer_h) );
 }
@@ -122,4 +124,7 @@ hr{
 }
 .emphasize-1{
 	color: #00c600;
+}
+.clear-float{
+	clear: both;
 }
