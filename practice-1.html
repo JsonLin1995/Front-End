@@ -2,9 +2,10 @@
 <html lang="zh-Hant">
 <head>
 	<title>Front End Practice</title>
-	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="./css/main-struct.css" >
-	<link rel="stylesheet" href="./css/practice-1.css" >
+	<meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/main-struct.css" >
+	<link rel="stylesheet" href="css/practice-1.css" >
 	<style>
 		
 	</style>
@@ -23,11 +24,12 @@
 	<div id="content" class="content" >
 		<div id="main" >			
 			<div id="main-1" >
+				<span class="update-message"> 更新 : 2017/8/11</span>
 				<h1>Attribute</h1>
 				<dl>
 					<dt><span lang="en">lang</span></dt>
 					<dd>- 標示使用語言</dd>
-					<dd>- 使用ISO Code, <a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">Ref</a></dd>
+					<dd>- 使用ISO Code (<a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">ref</a>)</dd>
 					<dt>title</dt>
 					<dd><span title="I'm a tooltip">- 滑鼠停留時出現提示</span></dd>
 					<dt>alt</dt>
@@ -46,7 +48,7 @@
 				    <li><small>Small text</small></li>
 				    <li><del>Deleted text</del></li>
 				    <li><ins>Inserted text</ins></li>
-					<li>This is<sub> subscript</sub> and <sup>superscript</sup></li>
+					<li>This is<sub> subscript</sub> and <sup>superscript</sup>, log<sub>2</sub>, 2<sup>x</sup></li>
 				</ul>
 				<h1>特殊符號</h1>
 				<table id="special-sign">
@@ -96,6 +98,12 @@
 						<td>&amp;trade;</td>
 					</tr>
 				</table>
+				<ul>
+					<li>不斷行空白指的是, 被他隔開的前後兩字一定會在一起顯示, 不會被換行隔開, 適合用在數字連接單位的時候</li>
+					<li>有一個不斷行連字符(non-breaking hyphen) entity number : <span style="font-family: Arial;">&amp;</span>#8209;</li>
+					<li>上面的指令是entity name, 但有可能瀏覽器顯示不出來, 可改用entity number</li>
+					<li>更多奇怪符號、entity number : <a href="https://www.w3schools.com/html/html_entities.asp">ref 1</a>, <a href="https://www.w3schools.com/html/html_symbols.asp">ref 2</a></li>
+				</ul>
 				<h1>表格設定</h1>
 				<ul>
 					<li>{ border-collapse: collapse; }可以讓表格的外框維持單線條</li>
@@ -103,7 +111,7 @@
 					<li>padding對th, td有效, 對table似乎沒有效果</li>
 					<li>colspan/rowspan屬性用來擴張儲存格</li>
 					<li>利用:nth-child() 抓取特定欄位</li>
-					<li>&lt;colgroup&gt;, 裡面放&lt;col&gt;, 用來訂出column群組, 寫在&lt;caption&gt;之後, &lt;tr&gt;之前, <a href="https://www.w3schools.com/tags/tag_colgroup.asp" target="_blank">Example</a></li>
+					<li>&lt;colgroup&gt;裡面放&lt;col&gt;, 用來訂出column群組, 寫在&lt;caption&gt;之後, &lt;tr&gt;之前 (<a href="https://www.w3schools.com/tags/tag_colgroup.asp" target="_blank">example</a>)</li>
 					<li>&lt;thead&gt;, &lt;tfoot&gt;, &lt;tbody&gt;</li>
 				</ul>
 				<h1>Horizontal List</h1>
@@ -131,19 +139,58 @@
 					<li>不知為啥, 大部分的公開網站無法在iframe裡顯示出來</li>
 				</ul>
 				<h1>奇奇怪怪的標籤</h1>
-				<p><span class="emphasize-1">&lt;address&gt;</span> element defines contact information (author/owner) of a document or an article</p>
-				<p><span class="emphasize-1">&lt;cite&gt;</span> element defines the title of a work</p>
-				<pre><span class="emphasize-1">&lt;pre&gt;</span>段落內保留換行及空白格式,<span style="color: red;">標籤仍然有效</span>, 似乎不會繼承CSS樣式, 
-				但換行後, 文字編輯器為了對齊而產生的空白也會被加進來, 而且會超出div的寬度顯示
+				<p>
+					<span class="emphasize-1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>, 方便適應各種裝置螢幕大小
+				</p>
+				<p>
+					<span class="emphasize-1">&lt;address&gt;</span> element defines contact information (author/owner) of a document or an article
+				</p>
+				<p>
+					<span class="emphasize-1">&lt;cite&gt;</span> element defines the title of a work
+				</p>
+				<pre>
+					<span class="emphasize-1">&lt;pre&gt;</span>段落內保留換行及空白格式,<span style="color: red;">標籤仍然有效</span>, 似乎不會繼承CSS樣式, 
+					但換行後, 文字編輯器為了對齊而產生的空白也會被加進來, 而且內容可以超出div的寬度
 				</pre>
-				<q>Browsers usually insert quotation marks around the <span class="emphasize-1">&lt;q&gt;</span> element. 而且因為html的lang是繁體中文, 所以變成上下引號</q>
-				<blockquote>Browsers usually indent <span class="emphasize-1">&lt;blockquote&gt;</span> elements.</blockquote>
-				<p><span class="emphasize-1">&lt;abbr&gt;</span>配上title屬性, <abbr title="Welcome To Facebook">WTF</abbr></p>
-				<p><span class="emphasize-1">&lt;bdo&gt;</span>配上dir屬性, 改變文字輸出的方向 : <bdo dir="rtl">This text will be written from right to left.</bdo></p>
+				<q>
+					Browsers usually insert quotation marks around the <span class="emphasize-1">&lt;q&gt;</span> element. 而且因為html的lang是繁體中文, 所以變成上下引號
+				</q>
+				<blockquote>
+					Browsers usually indent <span class="emphasize-1">&lt;blockquote&gt;</span> elements
+				</blockquote>
+				<p>
+					<span class="emphasize-1">&lt;abbr&gt;</span>配上title屬性, <abbr title="Welcome To Facebook">WTF</abbr>
+				</p>
+				<p>
+					<span class="emphasize-1">&lt;bdo&gt;</span>配上dir屬性, 改變文字輸出的方向 : <bdo dir="rtl">This text will be written from right to left.</bdo>
+				</p>
 				<!-- It's a cute comment. -->
-				<p><span class="emphasize-1">&lt;!--[if IE 9]&gt;</span> conditional comment, 符合條件的話不會被註解掉 <span class="emphasize-1">&lt;![endif]--&gt;</span></p>
-				<p>Use the <span class="emphasize-1">&lt;map&gt;</span> tag to define an image-map. An image-map is an image with clickable areas. 用name屬性來跟圖片連結, 但定位方式是絕對座標, 圖片大小一改變, 位置就跑掉了</p>
-				
+				<p>
+					<span class="emphasize-1">&lt;!--[if IE 9]&gt;</span> conditional comment, 符合條件的話<span style="color: red;">不會</span>被註解掉 <span class="emphasize-1">&lt;![endif]--&gt;</span>
+				</p>
+				<p>
+					Use the <span class="emphasize-1">&lt;map&gt;</span> tag to define an image-map. An image-map is an image with clickable areas. 用name屬性來跟圖片連結, 但定位方式是絕對座標, 圖片大小一改變, 位置就跑掉了
+				</p>
+				<p>
+					<span class="emphasize-1">&lt;noscript&gt;</span> 給不支援javascript的瀏覽器顯示的替代文字
+				</p>
+				<p>
+					<span class="emphasize-1">&lt;base href="https://jsonlin1995.github.io/" target="_blank"&gt;</span> 自動給網頁內使用相對路徑的URL加上前綴, 並設定好target
+				</p>
+				<p>
+					<span class="emphasize-1">&lt;kbd&gt;</span>標示為鍵盤輸入 : <kbd>Ctrl + Shift + Delete</kbd><br>
+					<span class="emphasize-1">&lt;samp&gt;</span>標示為輸出 : <samp>Error</samp><br>
+					<span class="emphasize-1">&lt;var&gt;</span> 標示為變數 : <var>variable</var><br>
+					<span class="emphasize-1">&lt;code&gt;</span>標示為程式碼, 可搭配<span class="emphasize-1">&lt;pre&gt;</span>使用(但就要放棄編輯器裡的縮排, 可能程式碼是用動態抓進來的時候用)<br>
+					<blockquote>
+						<code>
+							int y = 94;<br>
+							int o = 100;<br>
+							int u = 87;<br>
+							printf( "%d", y*o+u );
+						</code>
+					</blockquote>
+				</p>
 			</div>
 			<div id="rightbar"  >				
 			</div>

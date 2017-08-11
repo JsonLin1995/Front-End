@@ -128,3 +128,6 @@ a.logo{
 .clear-float{
 	clear: both;
 }
+.update-message{
+	color: #cccccc;
+}
