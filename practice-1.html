@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 <head>
 	<title>Front End Practice</title>
 	<meta charset="UTF-8" />
 	<link rel="stylesheet" href="./css/main-struct.css" >
-	<link rel="stylesheet" href="./css/" >
+	<link rel="stylesheet" href="./css/practice-1.css" >
+	<style>
+		
+	</style>
 </head>
 <body>
 	<div id="header" >
@@ -14,15 +17,111 @@
 	</div>
 	<div id="leftnav" class="leftnav" >
 		<div class="leftnav-container" >
-			<h3>Practice 1</h3>
+			<span class="visiting" >Practice 1</span>
 		</div>
 	</div>
 	<div id="content" class="content" >
 		<div id="main" >			
 			<div id="main-1" >
+				<h1>Attribute</h1>
+				<dl>
+					<dt><span lang="en">lang</span></dt>
+					<dd>- 標示使用語言</dd>
+					<dd>- 使用ISO Code, <a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">Ref</a></dd>
+					<dt>title</dt>
+					<dd><span title="I'm a tooltip">- 滑鼠停留時出現提示</span></dd>
+					<dt>alt</dt>
+					<dd><img src="" alt="- 圖片遺失時的替代文字"></dd>
+					<dt>disabled</dt>
+					<dd>- 使input元素無法輸入, ex : <input type="text" disabled></dd>
+					<dt>( p.s. 這列表是用<span class="emphasize-1">&lt;dl&gt;</span>做的 )</dt>
+				</dl>
+				<h1>Format Tag</h1>
+				<ul>
+				    <li><b>Bold text</b></li>
+				    <li><strong>Important text</strong></li>
+				    <li><i>Italic text</i></li>
+				    <li><em>Emphasized text</em></li>
+				    <li><mark>Marked text</mark></li>
+				    <li><small>Small text</small></li>
+				    <li><del>Deleted text</del></li>
+				    <li><ins>Inserted text</ins></li>
+					<li>This is<sub> subscript</sub> and <sup>superscript</sup></li>
+				</ul>
+				<h1>特殊符號</h1>
+				<table id="special-sign">
+					<caption>表格標題用&lt;caption&gt;</caption>
+					<tr>
+						<th>符號</th>
+						<th>語法</th>
+					</tr>
+					<tr>
+						<td>不斷行空白</td>
+						<td>&amp;nbsp;</td>
+					</tr>
+					<tr>
+						<td>半形空白</td>
+						<td>&amp;ensp;</td>
+					</tr>
+					<tr>
+						<td>全形空白</td>
+						<td>&amp;emsp;</td>
+					</tr>
+					<tr>
+						<td>&lt;</td>
+						<td>&amp;lt;</td>
+					</tr>
+					<tr>
+						<td>&gt;</td>
+						<td>&amp;gt;</td>
+					</tr>
+					<tr>
+						<td>&amp;</td>
+						<td>&amp;amp;</td>
+					</tr>
+					<tr>
+						<td>&quot;</td>
+						<td>&amp;quot;</td>
+					</tr>
+					<tr>
+						<td title="已註冊">&reg;</td>
+						<td>&amp;reg;</td>
+					</tr>
+					<tr>
+						<td title="版權">&copy;</td>
+						<td>&amp;copy;</td>
+					</tr>
+					<tr>
+						<td title="商標">&trade;</td>
+						<td>&amp;trade;</td>
+					</tr>
+				</table>
+				<h1>表格設定</h1>
+				<ul>
+					<li>{ border-collapse: collapse; }可以讓表格的外框維持單線條</li>
+					<li>table{ border-spacing: 5px; }可以調整table跟cell框線之間的距離</li>
+					<li>padding對th, td有效, 對table似乎沒有效果</li>
+					<li>colspan/rowspan屬性用來擴張儲存格</li>
+					<li>利用:nth-child() 抓取特定欄位</li>
+					<li>&lt;colgroup&gt;, 裡面放&lt;col&gt;, 用來訂出column群組, 寫在&lt;caption&gt;之後, &lt;tr&gt;之前, <a href="https://www.w3schools.com/tags/tag_colgroup.asp" target="_blank">Example</a></li>
+					<li>&lt;thead&gt;, &lt;tfoot&gt;, &lt;tbody&gt;</li>
+				</ul>
+				<h1>奇奇怪怪的標籤</h1>
+				<p><span class="emphasize-1">&lt;address&gt;</span> element defines contact information (author/owner) of a document or an article</p>
+				<p><span class="emphasize-1">&lt;cite&gt;</span> element defines the title of a work</p>
+				<pre><span class="emphasize-1">&lt;pre&gt;</span>段落內保留換行及空白格式,<span style="color: red;">標籤仍然有效</span>, 似乎不會繼承CSS樣式, 
+				但換行後, 文字編輯器為了對齊而產生的空白也會被加進來, 而且會超出div的寬度顯示
+				</pre>
+				<q>Browsers usually insert quotation marks around the <span class="emphasize-1">&lt;q&gt;</span> element. 而且因為html的lang是繁體中文, 所以變成上下引號</q>
+				<blockquote>Browsers usually indent <span class="emphasize-1">&lt;blockquote&gt;</span> elements.</blockquote>
+				<p><span class="emphasize-1">&lt;abbr&gt;</span>配上title屬性, <abbr title="Welcome To Facebook">WTF</abbr></p>
+				<p><span class="emphasize-1">&lt;bdo&gt;</span>配上dir屬性, 改變文字輸出的方向 : <bdo dir="rtl">This text will be written from right to left.</bdo></p>
+				<!-- It's a cute comment. -->
+				<p><span class="emphasize-1">&lt;!--[if IE 9]&gt;</span> conditional comment, 符合條件的話不會被註解掉 <span class="emphasize-1">&lt;![endif]--&gt;</span></p>
+				<p>Use the <span class="emphasize-1">&lt;map&gt;</span> tag to define an image-map. An image-map is an image with clickable areas. 用name屬性來跟圖片連結, 但定位方式是絕對座標, 圖片大小一改變, 位置就跑掉了</p>
 				
 			</div>
-			<div id="rightbar" >				
+			<div id="rightbar"  >				
 			</div>
 		</div>
 		<div id="footer" >

@@ -1,0 +1,26 @@
+table, th, td {
+	border: 3px solid #ffffff;	
+}
+th, td{ 
+	padding: 3px 6px 3px 6px;
+}
+#special-sign caption{
+	text-align: left; 
+}
+#special-sign{
+	font-family: Arial, Microsoft JhengHei;
+	border-collapse: collapse;
+}
+#special-sign th{
+	color: #ffffff;
+	background-color: #4d0099;
+}
+#special-sign tr:nth-child(even){
+	background-color: #e0e0e0;
+}
+#special-sign tr:nth-child(odd){
+	background-color: #bbbbbb;
+}
+#special-sign td:nth-child(1){
+	text-align: center;
+}

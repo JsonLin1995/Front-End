@@ -4,12 +4,13 @@
 	--footer_h: 70px;
 }
 *{
-	font-family: Trebuchet MS, Microsoft JhengHei;
+	/font-family: Trebuchet MS, Microsoft JhengHei;
 	box-sizing: border-box;
 }
 body{
 	height: 100vh;
 	margin: 0px;
+	font-family: Trebuchet MS, Microsoft JhengHei;
 }
 a{
 	text-decoration: none;
@@ -49,13 +50,52 @@ hr{
 }
 .leftnav-container{
 	height: 100%;
-	padding-top: 10px;
+	line-height: 30px;
+	font-size: 18pt;
+	padding-top: 30px;
+}
+.leftnav-container a{
+	padding-top: 2px;
+	padding-bottom: 2px;
 	padding-left: 16px;
+	display: block;
+}
+.leftnav-container a:link{
+	color: #505050;
+}
+.leftnav-container a:visited{
+	color: #505050;
+}
+.leftnav-container a:hover{
+	color: #000000;
+	background-color: #909090;
+}
+.leftnav-container a:active{
+	color: #ffffff;
+	background-color: #4d0099;
+}
+.leftnav-container .visiting{
+	color: #ffffff;
+	background-color: #4d0099;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 16px;
+	display: block;
 }
 #content{	
 	height: 100%;
 	padding-top: var(--header_h);
 	padding-left: var(--leftnav_w);
+}
+#content a:link{
+	color: #0099ff;
+}
+#content a:visited{
+	color: #0099ff;
+}
+#content a:hover{
+	color: #0099ff;
+	text-decoration: underline;
 }
 #main{	
 	height: calc( 100% - var(--footer_h) );
@@ -68,7 +108,7 @@ hr{
 #rightbar{
 	width: 40%;
 	height: 100%;
-	/padding: 100px 40px 40px 10px;
+	padding: 10px 10px 10px 10px;
 	float: left;
 }
 #footer{
@@ -79,4 +119,7 @@ hr{
 .footer-container{
 	padding-top: 10px;
 	padding-left: 40px;
+}
+.emphasize-1{
+	color: #00c600;
 }
