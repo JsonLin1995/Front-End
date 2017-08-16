@@ -24,19 +24,20 @@
 	<div id="content" class="content" >
 		<div id="main" >			
 			<div id="main-1" >
-				<span class="update-message"> 更新 : 2017/8/11</span>
+				<span class="update-message"> 更新 : 2017/8/16</span>
 				<h1>Attribute</h1>
 				<dl>
 					<dt><span lang="en">lang</span></dt>
-					<dd>- 標示使用語言</dd>
-					<dd>- 使用ISO Code (<a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">ref</a>)</dd>
+						<dd>- 標示使用語言</dd>
+						<dd>- 使用ISO Code (<a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">ref</a>)</dd>
 					<dt>title</dt>
-					<dd><span title="I'm a tooltip">- 滑鼠停留時出現提示</span></dd>
+						<dd><span title="I'm a tooltip">- 滑鼠停留時出現提示</span></dd>
 					<dt>alt</dt>
-					<dd><img src="" alt="- 圖片遺失時的替代文字"></dd>
+						<dd><img src="nope.jpg" alt="- 圖片遺失時的替代文字"></dd>
 					<dt>disabled</dt>
-					<dd>- 使input元素無法輸入, ex : <input type="text" disabled></dd>
+						<dd>- 使input元素無法輸入, ex : <input type="text" value="nope" disabled="disabled"></dd>
 					<dt>( p.s. 這列表是用<span class="emphasize-1">&lt;dl&gt;</span>做的 )</dt>
+						<dd></dd>
 				</dl>
 				<h1>Format Tag</h1>
 				<ul>
@@ -102,7 +103,7 @@
 					<li>不斷行空白指的是, 被他隔開的前後兩字一定會在一起顯示, 不會被換行隔開, 適合用在數字連接單位的時候</li>
 					<li>有一個不斷行連字符(non-breaking hyphen) entity number : <span style="font-family: Arial;">&amp;</span>#8209;</li>
 					<li>上面的指令是entity name, 但有可能瀏覽器顯示不出來, 可改用entity number</li>
-					<li>更多奇怪符號、entity number : <a href="https://www.w3schools.com/html/html_entities.asp">ref 1</a>, <a href="https://www.w3schools.com/html/html_symbols.asp">ref 2</a></li>
+					<li>更多奇怪符號、entity number : <a href="https://www.w3schools.com/html/html_entities.asp" target="_blank">ref 1</a>, <a href="https://www.w3schools.com/html/html_symbols.asp" target="_blank">ref 2</a></li>
 				</ul>
 				<h1>表格設定</h1>
 				<ul>
@@ -137,6 +138,90 @@
 					<li>iframe用來顯示其他網頁</li>
 					<li>a的target要用iframe的name屬性值</li>
 					<li>不知為啥, 大部分的公開網站無法在iframe裡顯示出來</li>
+				</ul>
+				<h1>form</h1>
+				<form action="" method="post" novalidate >
+					<fieldset>
+						<legend>Must Filled</legend>
+						First name :<br />
+						<input type="text" name="firstname" value="Bility" /><br>
+						Last name :<br>
+						<input type="text" name="lastname" value="Nu" /><br>
+						Gender :<br>
+						<input type="radio" name="gender" value="male" id="male" checked="checked"/>
+						<label for="male">Male</label><br>
+						<input type="radio" name="gender" value="female" id="female" />
+						<label for="female">Female</label><br>
+						<input type="radio" name="gender" value="others" id="others" />
+						<label for="others">Others</label><br>
+						<label><input type="radio" name="gender" value="unknown" /> Unknown</label>
+					</fieldset>
+					<fieldset>
+						<legend>Optional</legend>
+						Habbit :<br>
+						<label><input type="checkbox" name="reading" />Exercise</label> 	
+						<label><input type="checkbox" name="videogame" />Play video game</label>	
+						<label><input type="checkbox" name="movie" />Watch movie</label>
+						<label><input type="checkbox" name="sleeping" />Sleep</label><br><br>
+						Favorite color :<br>
+						<select name="color">
+							<optgroup label="RGB">	
+								<option value="red">Red</option>
+								<option value="blue">Blue</option>
+								<option value="green">Green</option>
+							</optgroup>
+							<optgroup label="CMYK">
+								<option value="cyan">Cyan</option>
+								<option value="magenta">Magenta</option>
+								<option value="yellow">Yellow</option>
+								<option value="black">Black</option>
+							</optgroup>
+						</select><br><br>
+						Introduction of yourself :<br>
+						<textarea name="introduction" rows="3" cols="30" >Some default message...</textarea><br><br>
+						<button type="button" onclick="alert('You just can\'t help yourself huh?')">Don't Click Me</button><br><br>
+						Favorite web browser : (datalist)<br>
+						<input list="browsers">
+						<datalist id="browsers">
+							<option value="Internet Explorer">
+							<option value="Firefox">
+							<option value="Chrome">
+							<option value="Opera">
+							<option value="Safari">
+						</datalist> 
+					</fieldset>
+					<fieldset>
+						<legend>New HTML5 input type</legend>
+						<ul>
+							<li>color : <input type="color" name="type-color" value="#4d0099" /></li>
+							<li>date : <input type="date" name="type-date" min="1995-08-07" max="2017-8-7" /> 可設上下限 : max/min, 格式 : yyyy-mm-dd, Firefox不支援</li>
+							<li>datetime-local : <input type="datetime-local" name="type-datetime-local" /> Firefox不支援</li>
+							<li>email : <input type="email" name="type-email" /> Safari不支援</li>
+							<li>month : <input type="month" name="type-month" /> Firefox不支援</li>
+							<li>number : <input type="number" name="type-number" min="0" max="100" step="10" value="0" /> 可設上下限 : max/min, 一次加多少 : step</li>
+							<li>range : <input type="range" name="type-range" min="1" max="100" /></li>
+							<li>search : <input type="search" name="type-search" />   好像跟一般text沒什麼差別</li>
+							<li>tel : <input type="tel" name="type-tel" /> 只有Safari支援</li>
+							<li>time : <input type="time" name="type-time" /> Firefox不支援</li>
+							<li>url : <input type="url" name="type-url" /> Safari不支援</li>
+							<li>week : <input type="week" name="type-week" /> Firefox不支援</li>
+						</ul>
+					</fieldset><br>
+					<input type="submit" value="Submit" />
+					<input type="reset" value="Reset" />
+				</form>
+				<ul>
+					<li>用&lt;fieldset&gt;將輸入內容分不同區塊</li>
+					<li>用&lt;legend&gt;來給fieldset標題名稱</li>
+					<li>每個輸入欄位都要有name屬性</li>
+					<li>size屬性調整text欄位長度(default:20)</li>
+					<li>rows, cols屬性調整textarea可見區域</li>
+					<li>&lt;button&gt;被歸類在form element, 還要寫個type="button"</li>
+					<li>&lt;datalist&gt;可用來做重複被使用的list, 可不選選項, 自己輸入, 輸入時還會根據輸入做篩選</li>
+					<li>&lt;datalist&gt;須給id, 要使用時 &lt;input list="datalist_id"&gt;</li>
+					<li>奇特的標籤 : &lt;keygen&gt;, &lt;output&gt; (<a href="https://www.w3schools.com/html/html_form_elements.asp" target="_blank">ref</a>)</li>
+					<li>&lt;label&gt;與選項類型的輸入搭配使用, 讓滑鼠點被label起來的文字也可以勾選選項, 綁定寫法 &lt;label for="input_id"&gt;, 或者直接用label把input包起來(ex:上面Gender中的Unkown)</li>
+					<li>&lt;optgroup&gt;可用來將下拉選單的選項分類, 分類名稱寫在label屬性裡</li>
 				</ul>
 				<h1>奇奇怪怪的標籤</h1>
 				<p>
@@ -182,15 +267,15 @@
 					<span class="emphasize-1">&lt;samp&gt;</span>標示為輸出 : <samp>Error</samp><br>
 					<span class="emphasize-1">&lt;var&gt;</span> 標示為變數 : <var>variable</var><br>
 					<span class="emphasize-1">&lt;code&gt;</span>標示為程式碼, 可搭配<span class="emphasize-1">&lt;pre&gt;</span>使用(但就要放棄編輯器裡的縮排, 可能程式碼是用動態抓進來的時候用)<br>
-					<blockquote>
-						<code>
-							int y = 94;<br>
-							int o = 100;<br>
-							int u = 87;<br>
-							printf( "%d", y*o+u );
-						</code>
-					</blockquote>
 				</p>
+				<blockquote>
+					<code>
+						int y = 94;<br>
+						int o = 100;<br>
+						int u = 87;<br>
+						printf( "%d", y*o+u );
+					</code>
+				</blockquote>
 			</div>
 			<div id="rightbar"  >				
 			</div>
