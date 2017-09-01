@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Front End Practice</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main-struct.css" />
+  <link rel="stylesheet" href="css/practice-3.css" />
+</head>
+<body>
+  <div id="header" >
+	<div class="header-container" >
+	  <a class="logo" href="index.html" >Json's Front End Practice</a>
+	</div>
+  </div>
+  <div id="leftnav" class="leftnav" >
+	<div class="leftnav-container" >	  
+	  <a href="practice-1.html">Practice 1</a>
+	  <a href="practice-2.html">Practice 2</a>
+	  <span class="visiting" >Practice 3</span>
+	</div>
+  </div>
+  <div id="content" class="content" >
+	<div id="main" >			
+	  <div id="main-1" >
+		<h1>Video</h1>
+		<video id="video-1" width="480" height="320" controls>
+		  <source src="video/spinning seal.mp4" type="video/mp4" />
+		  Your browser dosen't support the video tag.
+		</video>
+		<h1>Audio</h1>		
+		<button onclick="btnAudio_1()">Doh!</button><br>
+		<audio id="audio-1">
+		  <source src="audio/doh.mp3" type="audio/mpeg" />
+		  Your browser dosen't support the audio tag.
+		</audio>
+		<script>
+		  var myAudio = document.getElementById("audio-1");
+		  function btnAudio_1(){		    
+			myAudio.play();
+		  }
+		</script>
+		<ul>
+		  <li>mp3的type要用 audio/mpeg</li>
+		  <li>搭配javascript</li>
+		</ul>
+		<h1>Plug-in</h1>
+		<object width="480" height="320" data="swf/typing.swf"></object>
+		<ul>
+		  <li><span class="emphasize-1">&lt;object data="file.swf"&gt;</span></li>
+		  <li><span class="emphasize-1">&lt;embed src="file.swf"&gt;</span></li>
+		  <li>也可以放html, 圖片</li>
+		</ul>
+		<h1>Youtube</h1>
+		<iframe width="480" height="320" src="https://www.youtube.com/embed/QVgK9MJrA-g?playlist=h_1xYs6VTII,vViSeEUGM9g" frameborder="0" allowfullscreen></iframe>
+		<iframe width="480" height="320" src="https://www.youtube.com/embed/videoseries?list=PLXyh3UMqRuQ3dFwEKAMNX3QYxLP96tmN1&index=1"   frameborder="0"  allowfullscreen></iframe>
+		<ul>
+		  <li><span class="emphasize-1">&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID"  frameborder="0"  allowfullscreen&gt;</span></li>
+		  <li>自動播放 : ?autoplay=1</li>
+		  <li>重複播放 : &amp;loop=1</li>
+		  <li>拿掉控制面板 : ?controls=0</li>
+		  <li>播放清單 : ?playlist=VIDEO1_ID,VIDEO2_ID</li>
+		  <li>已存在的播放清單 : https://www.youtube.com/embed/videoseries?list=LIST_ID&index=VIDEO_INDEX</li>
+		  <li>一些問號開頭的控制參數, 在遇到list的時候要把?改成&才會有效</li>
+		</ul>
+		<div id="muteYouTubeVideoPlayer"></div> 
+		<script async src="https://www.youtube.com/iframe_api"></script>
+		<script>
+		function onYouTubeIframeAPIReady() {
+			var player;
+			player = new YT.Player('muteYouTubeVideoPlayer', {
+				videoId: 'ZZ5LpwO-An4',		// 影片ID
+				width: 480,               
+				height: 320,              
+				playerVars: {
+					//listType:'playlist',	// 播放類型:播放清單
+					//list: 'PLA4MkHD2KfXkuYVnLoVitdgaPYpBdywfF',	//播放清單ID
+					autoplay: 1,        
+					controls: 1,        
+					showinfo: 1,			// 影片標題	
+					modestbranding: 1,		// 隱藏YouTube Logo
+					loop: 1,            
+					fs: 1,					// 全螢幕按鈕
+					cc_load_policy: 0,		// CC字幕
+					iv_load_policy: 3,		// 隱藏影片註解
+					autohide: 0				// 播放影片時隱藏影片控制列
+				},
+				events: {
+					onReady: function(e) {
+						e.target.mute();	// 靜音
+					}
+				}
+			});
+		}
+		</script>
+		<ul>
+		  <li>也可用Youtube api來做, 能控制更多參數(靜音、字幕...)</li>
+		</ul>
+	  </div>
+	  <div id="rightbar" >				
+	  </div>
+	</div>
+	<div id="footer" >
+	  <hr>
+	  <div class="footer-container" >
+		&copy;2017&nbsp;&nbsp;&nbsp;stu900277@gmail.com
+	  </div>
+	</div>
+  </div>
+</body>
+</html>

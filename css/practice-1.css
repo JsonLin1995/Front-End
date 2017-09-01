@@ -52,3 +52,8 @@ th, td{
 	margin-top: 10px;
 	border: solid 5px #dddddd;
 }
+#img-bouncing{
+	max-width: 100%;
+	width: 300px;
+	/border: solid black 1px;
+}

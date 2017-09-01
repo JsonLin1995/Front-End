@@ -1,291 +1,296 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-	<title>Front End Practice</title>
-	<meta charset="UTF-8" />	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/main-struct.css" >
-	<link rel="stylesheet" href="css/practice-1.css" >
-	<style>
-		
-	</style>
+  <title>Front End Practice</title>
+  <meta charset="UTF-8" />	
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main-struct.css" />
+  <link rel="stylesheet" href="css/practice-1.css" />
+  <style>
+  </style>
 </head>
 <body>
-	<div id="header" >
-		<div class="header-container" >
-			<a class="logo" href="index.html" >Json's Front End Practice</a>
-		</div>
+  <div id="header" >
+    <div class="header-container" >
+	  <a class="logo" href="index.html" >Json's Front End Practice</a>
 	</div>
-	<div id="leftnav" class="leftnav" >
-		<div class="leftnav-container" >
-			<span class="visiting" >Practice 1</span>
-		</div>
+  </div>
+  <div id="leftnav" class="leftnav" >
+	<div class="leftnav-container" >
+	  <span class="visiting" >Practice 1</span>
+	  <a href="practice-2.html">Practice 2</a>
+	  <a href="practice-3.html">Practice 3</a>
 	</div>
-	<div id="content" class="content" >
-		<div id="main" >			
-			<div id="main-1" >
-				<span class="update-message"> 更新 : 2017/8/16</span>
-				<h1>Attribute</h1>
-				<dl>
-					<dt><span lang="en">lang</span></dt>
-						<dd>- 標示使用語言</dd>
-						<dd>- 使用ISO Code (<a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">ref</a>)</dd>
-					<dt>title</dt>
-						<dd><span title="I'm a tooltip">- 滑鼠停留時出現提示</span></dd>
-					<dt>alt</dt>
-						<dd><img src="nope.jpg" alt="- 圖片遺失時的替代文字"></dd>
-					<dt>disabled</dt>
-						<dd>- 使input元素無法輸入, ex : <input type="text" value="nope" disabled="disabled"></dd>
-					<dt>( p.s. 這列表是用<span class="emphasize-1">&lt;dl&gt;</span>做的 )</dt>
-						<dd></dd>
-				</dl>
-				<h1>Format Tag</h1>
-				<ul>
-				    <li><b>Bold text</b></li>
-				    <li><strong>Important text</strong></li>
-				    <li><i>Italic text</i></li>
-				    <li><em>Emphasized text</em></li>
-				    <li><mark>Marked text</mark></li>
-				    <li><small>Small text</small></li>
-				    <li><del>Deleted text</del></li>
-				    <li><ins>Inserted text</ins></li>
-					<li>This is<sub> subscript</sub> and <sup>superscript</sup>, log<sub>2</sub>, 2<sup>x</sup></li>
-				</ul>
-				<h1>特殊符號</h1>
-				<table id="special-sign">
-					<caption>表格標題用&lt;caption&gt;</caption>
-					<tr>
-						<th>符號</th>
-						<th>語法</th>
-					</tr>
-					<tr>
-						<td>不斷行空白</td>
-						<td>&amp;nbsp;</td>
-					</tr>
-					<tr>
-						<td>半形空白</td>
-						<td>&amp;ensp;</td>
-					</tr>
-					<tr>
-						<td>全形空白</td>
-						<td>&amp;emsp;</td>
-					</tr>
-					<tr>
-						<td>&lt;</td>
-						<td>&amp;lt;</td>
-					</tr>
-					<tr>
-						<td>&gt;</td>
-						<td>&amp;gt;</td>
-					</tr>
-					<tr>
-						<td>&amp;</td>
-						<td>&amp;amp;</td>
-					</tr>
-					<tr>
-						<td>&quot;</td>
-						<td>&amp;quot;</td>
-					</tr>
-					<tr>
-						<td title="已註冊">&reg;</td>
-						<td>&amp;reg;</td>
-					</tr>
-					<tr>
-						<td title="版權">&copy;</td>
-						<td>&amp;copy;</td>
-					</tr>
-					<tr>
-						<td title="商標">&trade;</td>
-						<td>&amp;trade;</td>
-					</tr>
-				</table>
-				<ul>
-					<li>不斷行空白指的是, 被他隔開的前後兩字一定會在一起顯示, 不會被換行隔開, 適合用在數字連接單位的時候</li>
-					<li>有一個不斷行連字符(non-breaking hyphen) entity number : <span style="font-family: Arial;">&amp;</span>#8209;</li>
-					<li>上面的指令是entity name, 但有可能瀏覽器顯示不出來, 可改用entity number</li>
-					<li>更多奇怪符號、entity number : <a href="https://www.w3schools.com/html/html_entities.asp" target="_blank">ref 1</a>, <a href="https://www.w3schools.com/html/html_symbols.asp" target="_blank">ref 2</a></li>
-				</ul>
-				<h1>表格設定</h1>
-				<ul>
-					<li>{ border-collapse: collapse; }可以讓表格的外框維持單線條</li>
-					<li>table{ border-spacing: 5px; }可以調整table跟cell框線之間的距離</li>
-					<li>padding對th, td有效, 對table似乎沒有效果</li>
-					<li>colspan/rowspan屬性用來擴張儲存格</li>
-					<li>利用:nth-child() 抓取特定欄位</li>
-					<li>&lt;colgroup&gt;裡面放&lt;col&gt;, 用來訂出column群組, 寫在&lt;caption&gt;之後, &lt;tr&gt;之前 (<a href="https://www.w3schools.com/tags/tag_colgroup.asp" target="_blank">example</a>)</li>
-					<li>&lt;thead&gt;, &lt;tfoot&gt;, &lt;tbody&gt;</li>
-				</ul>
-				<h1>Horizontal List</h1>
-				<ul class="hori-list">
-					<li><a>Home</a></li>
-					<li><a>News</a></li>
-					<li><a>Contact</a></li>
-					<li><a>About</a></li>
-				</ul>
-				<ul>
-					<li>li { float: left; } 做出橫列效果, li { display: inline; } 也行
-					<li>ul { overflow: hidden; }, 有這項設定才會讓ul的範圍展開(背景顏色範圍), 不太明白為什麼</li>
-					<li>樣式設定大多寫在a上, 且必須寫 a { display:block; }, a的padding才會把li撐開</li>
-				</ul>
-				<h1>iframe</h1>
-				<ul class="hori-list" >
-					<li><a href="index.html" target="iframe-1">Front End Practice</a></li>
-					<li><a href="https://jsonlin1995.github.io/Lumines/" target="iframe-1">Lumines</a></li>
-					<li><a href="https://jsonlin1995.blogspot.tw/" target="iframe-1">Blogger</a></li>
-				</ul>
-				<iframe id="iframe-1" name="iframe-1"></iframe>
-				<ul>
-					<li>iframe用來顯示其他網頁</li>
-					<li>a的target要用iframe的name屬性值</li>
-					<li>不知為啥, 大部分的公開網站無法在iframe裡顯示出來</li>
-				</ul>
-				<h1>form</h1>
-				<form action="" method="post" novalidate >
-					<fieldset>
-						<legend>Must Filled</legend>
-						First name :<br />
-						<input type="text" name="firstname" value="Bility" /><br>
-						Last name :<br>
-						<input type="text" name="lastname" value="Nu" /><br>
-						Gender :<br>
-						<input type="radio" name="gender" value="male" id="male" checked="checked"/>
-						<label for="male">Male</label><br>
-						<input type="radio" name="gender" value="female" id="female" />
-						<label for="female">Female</label><br>
-						<input type="radio" name="gender" value="others" id="others" />
-						<label for="others">Others</label><br>
-						<label><input type="radio" name="gender" value="unknown" /> Unknown</label>
-					</fieldset>
-					<fieldset>
-						<legend>Optional</legend>
-						Habbit :<br>
-						<label><input type="checkbox" name="reading" />Exercise</label> 	
-						<label><input type="checkbox" name="videogame" />Play video game</label>	
-						<label><input type="checkbox" name="movie" />Watch movie</label>
-						<label><input type="checkbox" name="sleeping" />Sleep</label><br><br>
-						Favorite color :<br>
-						<select name="color">
-							<optgroup label="RGB">	
-								<option value="red">Red</option>
-								<option value="blue">Blue</option>
-								<option value="green">Green</option>
-							</optgroup>
-							<optgroup label="CMYK">
-								<option value="cyan">Cyan</option>
-								<option value="magenta">Magenta</option>
-								<option value="yellow">Yellow</option>
-								<option value="black">Black</option>
-							</optgroup>
-						</select><br><br>
-						Introduction of yourself :<br>
-						<textarea name="introduction" rows="3" cols="30" >Some default message...</textarea><br><br>
-						<button type="button" onclick="alert('You just can\'t help yourself huh?')">Don't Click Me</button><br><br>
-						Favorite web browser : (datalist)<br>
-						<input list="browsers">
-						<datalist id="browsers">
-							<option value="Internet Explorer">
-							<option value="Firefox">
-							<option value="Chrome">
-							<option value="Opera">
-							<option value="Safari">
-						</datalist> 
-					</fieldset>
-					<fieldset>
-						<legend>New HTML5 input type</legend>
-						<ul>
-							<li>color : <input type="color" name="type-color" value="#4d0099" /></li>
-							<li>date : <input type="date" name="type-date" min="1995-08-07" max="2017-8-7" /> 可設上下限 : max/min, 格式 : yyyy-mm-dd, Firefox不支援</li>
-							<li>datetime-local : <input type="datetime-local" name="type-datetime-local" /> Firefox不支援</li>
-							<li>email : <input type="email" name="type-email" /> Safari不支援</li>
-							<li>month : <input type="month" name="type-month" /> Firefox不支援</li>
-							<li>number : <input type="number" name="type-number" min="0" max="100" step="10" value="0" /> 可設上下限 : max/min, 一次加多少 : step</li>
-							<li>range : <input type="range" name="type-range" min="1" max="100" /></li>
-							<li>search : <input type="search" name="type-search" />   好像跟一般text沒什麼差別</li>
-							<li>tel : <input type="tel" name="type-tel" /> 只有Safari支援</li>
-							<li>time : <input type="time" name="type-time" /> Firefox不支援</li>
-							<li>url : <input type="url" name="type-url" /> Safari不支援</li>
-							<li>week : <input type="week" name="type-week" /> Firefox不支援</li>
-						</ul>
-					</fieldset><br>
-					<input type="submit" value="Submit" />
-					<input type="reset" value="Reset" />
-				</form>
-				<ul>
-					<li>用&lt;fieldset&gt;將輸入內容分不同區塊</li>
-					<li>用&lt;legend&gt;來給fieldset標題名稱</li>
-					<li>每個輸入欄位都要有name屬性</li>
-					<li>size屬性調整text欄位長度(default:20)</li>
-					<li>rows, cols屬性調整textarea可見區域</li>
-					<li>&lt;button&gt;被歸類在form element, 還要寫個type="button"</li>
-					<li>&lt;datalist&gt;可用來做重複被使用的list, 可不選選項, 自己輸入, 輸入時還會根據輸入做篩選</li>
-					<li>&lt;datalist&gt;須給id, 要使用時 &lt;input list="datalist_id"&gt;</li>
-					<li>奇特的標籤 : &lt;keygen&gt;, &lt;output&gt; (<a href="https://www.w3schools.com/html/html_form_elements.asp" target="_blank">ref</a>)</li>
-					<li>&lt;label&gt;與選項類型的輸入搭配使用, 讓滑鼠點被label起來的文字也可以勾選選項, 綁定寫法 &lt;label for="input_id"&gt;, 或者直接用label把input包起來(ex:上面Gender中的Unkown)</li>
-					<li>&lt;optgroup&gt;可用來將下拉選單的選項分類, 分類名稱寫在label屬性裡</li>
-				</ul>
-				<h1>奇奇怪怪的標籤</h1>
-				<p>
-					<span class="emphasize-1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>, 方便適應各種裝置螢幕大小
-				</p>
-				<p>
-					<span class="emphasize-1">&lt;address&gt;</span> element defines contact information (author/owner) of a document or an article
-				</p>
-				<p>
-					<span class="emphasize-1">&lt;cite&gt;</span> element defines the title of a work
-				</p>
-				<pre>
-					<span class="emphasize-1">&lt;pre&gt;</span>段落內保留換行及空白格式,<span style="color: red;">標籤仍然有效</span>, 似乎不會繼承CSS樣式, 
-					但換行後, 文字編輯器為了對齊而產生的空白也會被加進來, 而且內容可以超出div的寬度
-				</pre>
-				<q>
-					Browsers usually insert quotation marks around the <span class="emphasize-1">&lt;q&gt;</span> element. 而且因為html的lang是繁體中文, 所以變成上下引號
-				</q>
-				<blockquote>
-					Browsers usually indent <span class="emphasize-1">&lt;blockquote&gt;</span> elements
-				</blockquote>
-				<p>
-					<span class="emphasize-1">&lt;abbr&gt;</span>配上title屬性, <abbr title="Welcome To Facebook">WTF</abbr>
-				</p>
-				<p>
-					<span class="emphasize-1">&lt;bdo&gt;</span>配上dir屬性, 改變文字輸出的方向 : <bdo dir="rtl">This text will be written from right to left.</bdo>
-				</p>
-				<!-- It's a cute comment. -->
-				<p>
-					<span class="emphasize-1">&lt;!--[if IE 9]&gt;</span> conditional comment, 符合條件的話<span style="color: red;">不會</span>被註解掉 <span class="emphasize-1">&lt;![endif]--&gt;</span>
-				</p>
-				<p>
-					Use the <span class="emphasize-1">&lt;map&gt;</span> tag to define an image-map. An image-map is an image with clickable areas. 用name屬性來跟圖片連結, 但定位方式是絕對座標, 圖片大小一改變, 位置就跑掉了
-				</p>
-				<p>
-					<span class="emphasize-1">&lt;noscript&gt;</span> 給不支援javascript的瀏覽器顯示的替代文字
-				</p>
-				<p>
-					<span class="emphasize-1">&lt;base href="https://jsonlin1995.github.io/" target="_blank"&gt;</span> 自動給網頁內使用相對路徑的URL加上前綴, 並設定好target
-				</p>
-				<p>
-					<span class="emphasize-1">&lt;kbd&gt;</span>標示為鍵盤輸入 : <kbd>Ctrl + Shift + Delete</kbd><br>
-					<span class="emphasize-1">&lt;samp&gt;</span>標示為輸出 : <samp>Error</samp><br>
-					<span class="emphasize-1">&lt;var&gt;</span> 標示為變數 : <var>variable</var><br>
-					<span class="emphasize-1">&lt;code&gt;</span>標示為程式碼, 可搭配<span class="emphasize-1">&lt;pre&gt;</span>使用(但就要放棄編輯器裡的縮排, 可能程式碼是用動態抓進來的時候用)<br>
-				</p>
-				<blockquote>
-					<code>
-						int y = 94;<br>
-						int o = 100;<br>
-						int u = 87;<br>
-						printf( "%d", y*o+u );
-					</code>
-				</blockquote>
-			</div>
-			<div id="rightbar"  >				
-			</div>
-		</div>
-		<div id="footer" >
-			<hr>
-			<div class="footer-container" >
-				&copy;2017&nbsp;&nbsp;&nbsp;stu900277@gmail.com
-			</div>
-		</div>
+  </div>
+  <div id="content" class="content" >
+	<div id="main" >			
+	  <div id="main-1" >
+		<span class="update-message"> 更新 : 2017/8/16</span>
+		<h1>Attribute</h1>
+		<dl>
+		  <dt><span lang="en">lang</span></dt>
+			<dd>- 標示使用語言</dd>
+			<dd>- 使用ISO Code (<a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">ref</a>)</dd>
+		  <dt>title</dt>
+			<dd><span title="I'm a tooltip">- 滑鼠停留時出現提示</span></dd>
+		  <dt>alt</dt>
+			<dd><img src="nope.jpg" alt="- 圖片遺失時的替代文字"></dd>
+		  <dt>disabled</dt>
+			<dd>- 使input元素無法輸入, ex : <input type="text" value="nope" disabled="disabled"></dd>
+		  <dt>( p.s. 這列表是用<span class="emphasize-1">&lt;dl&gt;</span>做的 )</dt>
+			<dd></dd>
+		</dl>
+		<h1>Format Tag</h1>
+		<ul>
+		  <li><b>Bold text</b></li>
+		  <li><strong>Important text</strong></li>
+		  <li><i>Italic text</i></li>
+		  <li><em>Emphasized text</em></li>
+		  <li><mark>Marked text</mark></li>
+		  <li><small>Small text</small></li>
+		  <li><del>Deleted text</del></li>
+		  <li><ins>Inserted text</ins></li>
+		  <li>This is<sub> subscript</sub> and <sup>superscript</sup>, log<sub>2</sub>, 2<sup>x</sup></li>
+		</ul>
+		<h1>特殊符號</h1>
+		<table id="special-sign">
+		  <caption>表格標題用&lt;caption&gt;</caption>
+		  <tr>
+			<th>符號</th>
+			<th>語法</th>
+		  </tr>
+		  <tr>
+			<td>不斷行空白</td>
+			<td>&amp;nbsp;</td>
+		  </tr>
+		  <tr>
+			<td>半形空白</td>
+			<td>&amp;ensp;</td>
+		  </tr>
+		  <tr>
+			<td>全形空白</td>
+			<td>&amp;emsp;</td>
+		  </tr>
+		  <tr>
+			<td>&lt;</td>
+			<td>&amp;lt;</td>
+		  </tr>
+		  <tr>
+			<td>&gt;</td>
+			<td>&amp;gt;</td>
+		  </tr>
+		  <tr>
+			<td>&amp;</td>
+			<td>&amp;amp;</td>
+		  </tr>
+		  <tr>
+			<td>&quot;</td>
+			<td>&amp;quot;</td>
+		  </tr>
+		  <tr>
+			<td title="已註冊">&reg;</td>
+			<td>&amp;reg;</td>
+		  </tr>
+		  <tr>
+			<td title="版權">&copy;</td>
+			<td>&amp;copy;</td>
+		  </tr>
+		  <tr>
+			<td title="商標">&trade;</td>
+			<td>&amp;trade;</td>
+		  </tr>
+		</table>
+		<ul>
+		  <li>不斷行空白指的是, 被他隔開的前後兩字一定會在一起顯示, 不會被換行隔開, 適合用在數字連接單位的時候</li>
+		  <li>有一個不斷行連字符(non-breaking hyphen) entity number : <span style="font-family: Arial;">&amp;</span>#8209;</li>
+		  <li>上面的指令是entity name, 但有可能瀏覽器顯示不出來, 可改用entity number</li>
+		  <li>更多奇怪符號、entity number : <a href="https://www.w3schools.com/html/html_entities.asp" target="_blank">ref 1</a>, <a href="https://www.w3schools.com/html/html_symbols.asp" target="_blank">ref 2</a></li>
+		</ul>
+		<h1>表格設定</h1>
+		<ul>
+		  <li>{ border-collapse: collapse; }可以讓表格的外框維持單線條</li>
+		  <li>table{ border-spacing: 5px; }可以調整table跟cell框線之間的距離</li>
+		  <li>padding對th, td有效, 對table似乎沒有效果</li>
+		  <li>colspan/rowspan屬性用來擴張儲存格</li>
+		  <li>利用:nth-child() 抓取特定欄位</li>
+		  <li>&lt;colgroup&gt;裡面放&lt;col&gt;, 用來訂出column群組, 寫在&lt;caption&gt;之後, &lt;tr&gt;之前 (<a href="https://www.w3schools.com/tags/tag_colgroup.asp" target="_blank">example</a>)</li>
+		  <li>&lt;thead&gt;, &lt;tfoot&gt;, &lt;tbody&gt;</li>
+		</ul>
+		<h1>Horizontal List</h1>
+		<ul class="hori-list">
+		  <li><a>Home</a></li>
+		  <li><a>News</a></li>
+		  <li><a>Contact</a></li>
+		  <li><a>About</a></li>
+		</ul>
+		<ul>
+		  <li>li { float: left; } 做出橫列效果, li { display: inline; } 也行
+		  <li>ul { overflow: hidden; }, 有這項設定才會讓ul的範圍展開(背景顏色範圍), 不太明白為什麼</li>
+		  <li>樣式設定大多寫在a上, 且必須寫 a { display:block; }, a的padding才會把li撐開</li>
+		</ul>
+		<h1>iframe</h1>
+		<ul class="hori-list" >
+		  <li><a href="index.html" target="iframe-1">Front End Practice</a></li>
+		  <li><a href="https://jsonlin1995.github.io/Lumines/" target="iframe-1">Lumines</a></li>
+		  <li><a href="https://jsonlin1995.blogspot.tw/" target="iframe-1">Blogger</a></li>
+		</ul>
+		<iframe id="iframe-1" name="iframe-1"></iframe>
+		<ul>
+		  <li>iframe用來顯示其他網頁</li>
+		  <li>a的target要用iframe的name屬性值</li>
+		  <li>不知為啥, 大部分的公開網站無法在iframe裡顯示出來</li>
+		</ul>
+		<h1>form</h1>
+		<form action="" method="post" novalidate >
+		  <fieldset>
+			<legend>Must Filled</legend>
+			First name :<br />
+			<input type="text" name="firstname" value="Bility" /><br>
+			Last name :<br>
+			<input type="text" name="lastname" value="Nu" /><br>
+			Gender :<br>
+			<input type="radio" name="gender" value="male" id="male" checked="checked"/>
+			<label for="male">Male</label><br>
+			<input type="radio" name="gender" value="female" id="female" />
+			<label for="female">Female</label><br>
+			<input type="radio" name="gender" value="others" id="others" />
+			<label for="others">Others</label><br>
+			<label><input type="radio" name="gender" value="unknown" /> Unknown</label>
+		  </fieldset>
+		  <fieldset>
+			<legend>Optional</legend>
+			Habbit :<br>
+			<label><input type="checkbox" name="reading" />Exercise</label> 
+			<label><input type="checkbox" name="videogame" />Play video game</label>
+			<label><input type="checkbox" name="movie" />Watch movie</label>
+			<label><input type="checkbox" name="sleeping" />Sleep</label><br><br>
+			Favorite color :<br>
+			<select name="color">
+			  <optgroup label="RGB">	
+				<option value="red">Red</option>
+				<option value="blue">Blue</option>
+				<option value="green">Green</option>
+			  </optgroup>
+			  <optgroup label="CMYK">
+				<option value="cyan">Cyan</option>
+				<option value="magenta">Magenta</option>
+				<option value="yellow">Yellow</option>
+				<option value="black">Black</option>
+			  </optgroup>
+			</select><br><br>
+			Introduction of yourself :<br>
+			<textarea name="introduction" rows="3" cols="30" >Some default message...</textarea><br><br>
+			<button type="button" onclick="alert('You just can\'t help yourself huh?')">Don't Click Me</button><br><br>
+			Favorite web browser : (datalist)<br>
+			<input list="browsers">
+			<datalist id="browsers">
+			  <option value="Internet Explorer">
+			  <option value="Firefox">
+			  <option value="Chrome">
+			  <option value="Opera">
+			  <option value="Safari">
+			</datalist> 
+		  </fieldset>
+		  <fieldset>
+			<legend>New HTML5 input type</legend>
+			<ul>
+			  <li>color : <input type="color" name="type-color" value="#4d0099" /></li>
+			  <li>date : <input type="date" name="type-date" min="1995-08-07" max="2017-8-7" /> 可設上下限 : max/min, 格式 : yyyy-mm-dd, Firefox不支援</li>
+			  <li>datetime-local : <input type="datetime-local" name="type-datetime-local" /> Firefox不支援</li>
+			  <li>email : <input type="email" name="type-email" /> Safari不支援</li>
+			  <li>month : <input type="month" name="type-month" /> Firefox不支援</li>
+			  <li>number : <input type="number" name="type-number" min="0" max="100" step="10" value="0" /> 可設上下限 : max/min, 一次加多少 : step</li>
+			  <li>range : <input type="range" name="type-range" min="1" max="100" /></li>
+			  <li>search : <input type="search" name="type-search" />   好像跟一般text沒什麼差別</li>
+			  <li>tel : <input type="tel" name="type-tel" /> 只有Safari支援</li>
+			  <li>time : <input type="time" name="type-time" /> Firefox不支援</li>
+			  <li>url : <input type="url" name="type-url" /> Safari不支援</li>
+			  <li>week : <input type="week" name="type-week" /> Firefox不支援</li>
+			</ul>
+		  </fieldset><br>
+		  <input type="submit" value="Submit" />
+		  <input type="reset" value="Reset" />
+		</form>
+		<ul>
+		  <li>用&lt;fieldset&gt;將輸入內容分不同區塊</li>
+		  <li>用&lt;legend&gt;來給fieldset標題名稱</li>
+		  <li>每個輸入欄位都要有name屬性</li>
+		  <li>size屬性調整text欄位長度(default:20)</li>
+		  <li>rows, cols屬性調整textarea可見區域</li>
+		  <li>&lt;button&gt;被歸類在form element, 還要寫個type="button"</li>
+		  <li>&lt;datalist&gt;可用來做重複被使用的list, 可不選選項, 自己輸入, 輸入時還會根據輸入做篩選</li>
+		  <li>&lt;datalist&gt;須給id, 要使用時 &lt;input list="datalist_id"&gt;</li>
+		  <li>奇特的標籤 : &lt;keygen&gt;, &lt;output&gt; (<a href="https://www.w3schools.com/html/html_form_elements.asp" target="_blank">ref</a>)</li>
+		  <li>&lt;label&gt;與選項類型的輸入搭配使用, 讓滑鼠點被label起來的文字也可以勾選選項, 綁定寫法 &lt;label for="input_id"&gt;, 或者直接用label把input包起來(ex:上面Gender中的Unkown)</li>
+		  <li>&lt;optgroup&gt;可用來將下拉選單的選項分類, 分類名稱寫在label屬性裡</li>
+		</ul>
+		<h1>奇奇怪怪的標籤</h1>
+		<p>
+		  <span class="emphasize-1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>, 方便適應各種裝置螢幕大小
+		</p>
+		<p>
+		  <span class="emphasize-1">&lt;address&gt;</span> element defines contact information (author/owner) of a document or an article
+		</p>
+		<p>
+		  <span class="emphasize-1">&lt;cite&gt;</span> element defines the title of a work
+		</p>
+		<pre>
+		  <span class="emphasize-1">&lt;pre&gt;</span>段落內保留換行及空白格式,<span style="color: red;">標籤仍然有效</span>, 似乎不會繼承CSS樣式, 
+		  但換行後, 文字編輯器為了對齊而產生的空白也會被加進來, 而且內容可以超出div的寬度
+		</pre>
+		<q>
+		  Browsers usually insert quotation marks around the <span class="emphasize-1">&lt;q&gt;</span> element. 而且因為html的lang是繁體中文, 所以變成上下引號
+		</q>
+		<blockquote>
+		  Browsers usually indent <span class="emphasize-1">&lt;blockquote&gt;</span> elements
+		</blockquote>
+		<p>
+		  <span class="emphasize-1">&lt;abbr&gt;</span>配上title屬性, <abbr title="Welcome To Facebook">WTF</abbr>
+		</p>
+		<p>
+		  <span class="emphasize-1">&lt;bdo&gt;</span>配上dir屬性, 改變文字輸出的方向 : <bdo dir="rtl">This text will be written from right to left.</bdo>
+		</p>
+		<!-- It's a cute comment. -->
+		<p>
+		  <span class="emphasize-1">&lt;!--[if IE 9]&gt;</span> conditional comment, 符合條件的話<span style="color: red;">不會</span>被註解掉 <span class="emphasize-1">&lt;![endif]--&gt;</span>
+		</p>
+		<p>
+		  Use the <span class="emphasize-1">&lt;map&gt;</span> tag to define an image-map. An image-map is an image with clickable areas. 用name屬性來跟圖片連結, 但定位方式是絕對座標, 圖片大小一改變, 位置就跑掉了
+		</p>
+		<p>
+		  <span class="emphasize-1">&lt;noscript&gt;</span> 給不支援javascript的瀏覽器顯示的替代文字
+		</p>
+		<p>
+		  <span class="emphasize-1">&lt;base href="https://jsonlin1995.github.io/" target="_blank"&gt;</span> 自動給網頁內使用相對路徑的URL加上前綴, 並設定好target
+		</p>
+		<p>
+		  <span class="emphasize-1">&lt;kbd&gt;</span>標示為鍵盤輸入 : <kbd>Ctrl + Shift + Delete</kbd><br>
+		  <span class="emphasize-1">&lt;samp&gt;</span>標示為輸出 : <samp>Error</samp><br>
+		  <span class="emphasize-1">&lt;var&gt;</span> 標示為變數 : <var>variable</var><br>
+		  <span class="emphasize-1">&lt;code&gt;</span>標示為程式碼, 可搭配<span class="emphasize-1">&lt;pre&gt;</span>使用(但就要放棄編輯器裡的縮排, 可能程式碼是用動態抓進來的時候用)<br>
+		</p>
+		<blockquote>
+		  <code>
+			int y = 94;<br>
+			int o = 100;<br>
+			int u = 87;<br>
+			printf( "%d", y*o+u );
+		  </code>
+		</blockquote>
+		<figure>
+		  <img id="img-bouncing" src="image/bouncing.gif" />
+		  <figcaption>用<span class="emphasize-1">&lt;figure&gt;</span>, <span class="emphasize-1">&lt;figcaption&gt;</span>將圖片跟說明綁在一起, 似乎會縮排</figcaption>
+		</figure>
+	  </div>
+	  <div id="rightbar"  >				
+	  </div>
 	</div>
+	<div id="footer" >
+	  <hr>
+	  <div class="footer-container" >
+		&copy;2017&nbsp;&nbsp;&nbsp;stu900277@gmail.com
+	  </div>
+	</div>
+  </div>
 </body>
 </html>

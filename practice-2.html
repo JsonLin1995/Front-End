@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Front End Practice</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main-struct.css" />
+  <link rel="stylesheet" href="css/practice-2.css" />
+  <style>
+    /canvas { border: 1px solid black; }
+  </style>
+</head>
+<body>
+  <div id="header" >
+	<div class="header-container" >
+	  <a class="logo" href="index.html" >Json's Front End Practice</a>
+	</div>
+  </div>
+  <div id="leftnav" class="leftnav" >
+	<div class="leftnav-container" >
+	  <a href="practice-1.html">Practice 1</a>
+	  <span class="visiting" >Practice 2</span>
+	  <a href="practice-3.html">Practice 3</a>
+	</div>
+  </div>
+  <div id="content" class="content" >
+	<div id="main" >			
+	  <div id="main-1" >
+		<span class="update-message"> 更新 : 2017/8/28</span>
+		<h1>Canvas</h1>
+		<canvas id="canvas-1" width="200" height="150"></canvas>
+		<script>
+		  var c = document.getElementById("canvas-1");
+		  var ctx = c.getContext("2d");
+		  var grd = ctx.createLinearGradient(0,0,150,0);
+		  grd.addColorStop(0, "#4d0099");
+		  grd.addColorStop(1, "white");
+		  ctx.beginPath();
+		  ctx.fillStyle = grd;
+		  ctx.strokeStyle = "black";
+		  ctx.rect(10,10,150,100);
+		  ctx.fill();
+		  //ctx.stroke();
+		  ctx.closePath();
+		</script>
+		<h4>矩形</h4>
+		<blockquote>
+		  <code>
+		    var c =  document.getElementById("canvasID");<br>
+			var ctx = c.getContext("2d");<br>
+			ctx.beginPath();<br>
+			ctx.strokeStyle = "black";<span class="emphasize-1"> //設線條顏色</span><br>
+			ctx.fillStyle = "red";<span class="emphasize-1"> //設填滿顏色</span><br>
+			ctx.rect(10,10,150,100);<span class="emphasize-1"> //設矩形範圍(x,y,width,height)</span><br>
+			ctx.stroke();<span class="emphasize-1"> //畫線條</span><br>
+			ctx.fill();<span class="emphasize-1"> //填滿顏色</span><br>
+			<span class="emphasize-1">//stroke跟fill的順序會影響畫出來的效果</span><br>
+			ctx.closePath();<br>
+		  </code>
+		</blockquote>
+		<h4>漸層</h4>
+		<blockquote>
+		  <code>
+		    <span class="emphasize-1"> //線性漸層(color1-x,color1-y,color2-x,color2-y)</span><br>
+			var grd = ctx.createLinearGradient(0,0,150,0);<br>
+			<span class="emphasize-1"> //圓形漸層(color1-x,color1-y,color1-radius,color2-x,color2-y,color2-radius)</span><br>
+		    var grd = ctx.createRadialGradient(100,50,5,100,50,100);<br>
+			grd.addColorStop(0, "#4d0099");<br>
+		    grd.addColorStop(1, "white");<br>
+			ctx.fillStyle = grd;<br>
+			ctx.fillRect(10,10,150,100);<br>
+		  </code>
+		</blockquote>
+		<h4>直線</h4>
+		<blockquote>
+		  <code>
+		    ctx.moveTo(0,0);<br>
+			ctx.lineTo(150,100);<br>
+			ctx.stroke();<br>
+		  </code>
+		</blockquote>
+		<h4>圓</h4>
+		<blockquote>
+		  <code>
+		    ctx.arc(50,50,40,0,2*Math.PI);<br>
+			<span class="emphasize-1"> //(圓心x,圓心y,半徑,起始角,結束角,逆時針) 最後一項不寫, 預設是false, 即順時針, 填true為逆時針</span><br>
+			<span class="emphasize-1"> //比較奇特的是0.5PI在下半圓,1.5PI在上半圓</span><br>
+			ctx.stroke();<br>
+		  </code>
+		</blockquote>
+		<h4>文字</h4>
+		<blockquote>
+		  <code>
+		    ctx.font = "30px Arial";<br>
+			ctx.fillText("Hello World",10,50);<br>
+			ctx.strokeText("Hello World",10,50);<br>
+		  </code>
+		</blockquote>
+		<h4>圖片</h4>
+		<blockquote>
+		  <code>
+		    var img = document.getElementById("imgID");<br>
+			ctx.drawImage(img,10,10);<br>
+		  </code>
+		</blockquote>
+		<h1>SVG</h1>
+		物件概念的向量圖形, <a href="https://www.w3schools.com/html/html5_svg.asp" target="_blank">ref</a><br>
+		<svg width="400" height="180">
+		  <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+		  style="fill:#4d0099;stroke:black;stroke-width:5;opacity:0.8" />
+		  <text fill="#ffffff" font-size="45" font-family="Verdana" x="75" y="100">SVG</text>
+		</svg>
+		<h1>Google Maps</h1>
+		<div id="map-1" ></div>
+		<script>
+		  function myMap(){
+		    var mapOptions = {
+			  center: new google.maps.LatLng(23.5, 119.8),
+			  zoom: 6,
+			  mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map( document.getElementById("map-1"), mapOptions );
+		  }
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+		<ul>
+		  <li>須建立一個有ID的div</li>
+		  <li>須加入script tag連結Google Maps API, callback為function名稱 (https://maps.googleapis.com/maps/api/js?callback=myMap)</li>
+		  <li><a href="https://www.w3schools.com/html/html_googlemaps.asp" target="_blank">ref</a>
+		</ul>
+	  </div>
+	  <div id="rightbar" >			
+	  </div>
+	</div>
+	<div id="footer" >
+	  <hr>
+	  <div class="footer-container" >
+		&copy;2017&nbsp;&nbsp;&nbsp;stu900277@gmail.com
+	  </div>
+	</div>
+  </div>
+</body>
+</html>
