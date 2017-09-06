@@ -18,12 +18,13 @@
 	  <a href="practice-1.html">Practice 1</a>
 	  <a href="practice-2.html">Practice 2</a>
 	  <span class="visiting" >Practice 3</span>
+	  <a href="practice-4.html" >Practice 4</a>
 	</div>
   </div>
   <div id="content" class="content" >
 	<div id="main" >			
 	  <div id="main-1" >
-		<span class="update-message"> 更新 : 2017/9/1</span>
+		<span class="update-message">更新 : 2017/9/1</span>
 		<h1>Video</h1>
 		<video id="video-1" width="480" height="320" controls>
 		  <source src="video/spinning seal.mp4" type="video/mp4" />
@@ -72,32 +73,40 @@
 		function onYouTubeIframeAPIReady() {
 			var player;
 			player = new YT.Player('muteYouTubeVideoPlayer', {
-				videoId: 'ZZ5LpwO-An4',		// 影片ID
+				videoId: 'CZlfbep2LdU',		// 影片ID
 				width: 480,               
 				height: 320,              
 				playerVars: {
 					//listType:'playlist',	// 播放類型:播放清單
-					//list: 'PLA4MkHD2KfXkuYVnLoVitdgaPYpBdywfF',	//播放清單ID
-					autoplay: 1,        
-					controls: 1,        
+					//list: 'PLXyh3UMqRuQ0DGXeiVlKwPt1t9DJF-Ksv',	//播放清單ID
+					//playlist: 'ZZ5LpwO-An4',	//自訂list
+					autoplay: 1,        	// 自動播放
+					controls: 1,        	// 播放控制列
 					showinfo: 1,			// 影片標題	
 					modestbranding: 1,		// 隱藏YouTube Logo
-					loop: 1,            
+					loop: 0,            	// 重播
 					fs: 1,					// 全螢幕按鈕
-					cc_load_policy: 0,		// CC字幕
+					cc_load_policy: 1,		// CC字幕
 					iv_load_policy: 3,		// 隱藏影片註解
 					autohide: 0				// 播放影片時隱藏影片控制列
 				},
 				events: {
 					onReady: function(e) {
 						e.target.mute();	// 靜音
-					}
+					},
+					onStateChange:
+						function(e){
+							if( e.data === YT.PlayerState.ENDED ){
+								player.playVideo();		//重播
+							}
+						}
 				}
 			});
 		}
 		</script>
 		<ul>
 		  <li>也可用Youtube api來做, 能控制更多參數(靜音、字幕...)</li>
+		  <li>loop須搭list種類的才會有效, 若只想重複一部影片, 可弄個playlist裡面放兩部一樣的影片, 就能配上loop, 但有個缺點是會一直重複載入影片, 可改用event的方式來重播, 不會重複載入也不用list</li>
 		</ul>
 	  </div>
 	  <div id="rightbar" >				
