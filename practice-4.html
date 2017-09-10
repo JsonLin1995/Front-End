@@ -19,17 +19,15 @@
 	  <a href="practice-2.html">Practice 2</a>
 	  <a href="practice-3.html">Practice 3</a>
 	  <span class="visiting" >Practice 4</span>
+	  <a href="practice-5.html">Practice 5</a>
 	</div>
   </div>
   <div id="content" class="content" >
 	<div id="main" >			
 	  <div id="main-1" >
-	    <span class="update-message">更新 : 2017/9/5</span>
+	    <span class="update-message">更新 : 2017/9/7</span>
 		
-		<h1>Google Maps API</h1>
-		<ul>
-		  <li><a href="https://www.w3schools.com/html/html5_geolocation.asp" target="_blank">ref</a>
-		</ul>
+		<h1>Google Maps API</h1>		
 		<button onclick="getLocation()">Get Location</button><br><br>
 		<div id="msg"></div>
 		<div id="mapholder"></div>
@@ -80,6 +78,10 @@
 			}
 		}
 		</script>
+		<ul>
+		  <li>要先弄個<a href="https://console.developers.google.com">API Key</a>(Google Maps JavaScript API), 有配額限制</li>
+		  <li><a href="https://www.w3schools.com/html/html5_geolocation.asp" target="_blank">ref</a>
+		</ul>
 		
 		<h1>Drag/Drop</h1>
 		<script>
@@ -101,6 +103,78 @@
 		<div  class="div-dragdrop" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
 		<ul class="clear-float">
 		  <li>被拖移的物件要有id</li>
+		</ul>
+		
+		<h1>Local Storage/Session Storage</h1>
+		<input id="input-msg" type="text" placeholder="說點什麼..." />
+		<button onclick="setLocalStorage()">Commit</button><br><br>
+		<div id="msg-2"></div>
+		<script>
+		var msg = localStorage.getItem("message");
+		if( typeof( Storage ) !== "undefined" ){			
+			if( msg != null ){
+				document.getElementById("msg-2").innerHTML = "至理名言 : " + msg;
+			}
+			else{
+				//document.getElementById("msg-2").innerHTML = "";
+			}
+		}
+		else{
+			document.getElementById("msg-2").innerHTML = "Sorry, your browser does not support Web Storage...";
+		}		
+		function setLocalStorage(){
+			var input = document.getElementById("input-msg").value;
+			if( input != "" ){
+				localStorage.setItem( "message", input );
+				//localStorage.message = document.getElementById("input-msg").value;
+				document.getElementById("msg-2").innerHTML = "至理名言 : " + localStorage.getItem("message");
+				//document.getElementById("msg-2").innerHTML = localStorage.message;				
+			}
+		}
+		</script>
+		<ul>
+		  <li>功能類似cookie, 資料儲存在local端, 但可存的容量更大, 不影響網頁效能</li>
+		  <li>localStorage跟sessionStorage只差在儲存期限, 前者無限, 後者在網頁關閉後就清掉</li>
+		  <li><a href="https://www.w3schools.com/html/html5_webstorage.asp" target="_blank">ref</a></li>
+		</ul>
+		
+		<h1>Web Worker</h1>
+		<p>Counter : <span id="msg-3"></span></p>
+		<button onclick="startWorker()">Start</button>
+		<button onclick="stopWorker()">Stop</button>
+		<script>
+		var w;
+		
+		function startWorker(){
+			if( typeof(Worker) !== "undefined" ){
+				if( typeof(w) == "undefined" ){
+					w = new Worker("js/practice-4_worker-1.js");
+				}
+				w.onmessage = function(event){
+					document.getElementById("msg-3").innerHTML = event.data;
+				}
+			} 
+			else{
+				document.getElementById("msg-3").innerHTML = "Sorry! No Web Worker support.";
+			}
+		}
+		
+		function stopWorker(){
+			w.terminate();
+			w = undefined;
+		}
+		</script>
+		<ul>
+		  <li>把javascript跑在背景, 可用在複雜運算時, 因為用一般的寫法, 網頁要在javascript執行完後才能做互動</li>
+		  <li>chrome在local端測試時會跳錯誤訊息, 其他瀏覽器不會, 憨</li>
+		  <li><a href="https://www.w3schools.com/html/html5_webworkers.asp" target="_blank">ref</a></li>
+		</ul>
+		
+		<h1>Server-Sent Events (SSE)</h1>
+		<ul>
+		  <li>自動更新從server送來的訊息, 有點類似等Web Worker外部js送訊息進來(onmessage)</li>
+		  <li>需有server端._.</li>
+		  <li><a href="https://www.w3schools.com/html/html5_serversentevents.asp" target="_blank">ref</a></li>
 		</ul>
 	  </div>
 	  <div id="rightbar" >				
