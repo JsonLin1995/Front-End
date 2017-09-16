@@ -25,12 +25,14 @@
   <div id="content" class="content" >
 	<div id="main" >			
 	  <div id="main-1" >
-		<span class="update-message">更新 : 2017/9/1</span>
+		<span class="update-message">更新 : 2017/9/16</span>
+		
 		<h1>Video</h1>
 		<video id="video-1" width="480" height="320" controls>
 		  <source src="video/spinning seal.mp4" type="video/mp4" />
 		  Your browser dosen't support the video tag.
 		</video>
+		
 		<h1>Audio</h1>		
 		<button onclick="btnAudio_1()">Tuturu</button><br>
 		<audio id="audio-1">
@@ -47,6 +49,7 @@
 		  <li>mp3的type要用 audio/mpeg</li>
 		  <li>搭配javascript</li>
 		</ul>
+		
 		<h1>Plug-in</h1>
 		<!--<object width="480" height="320" data="swf/typing.swf"></object>-->
 		<embed width="480" height="320" src="swf/typing.swf"></embed>
@@ -56,9 +59,10 @@
 		  <li>使用&lt;object&gt;時, 若用chrome且沒有允許flash的話, 會瘋狂閃爍, 且只有在線上(github)的會這樣, 本地端的不會, 不知為啥</li>
 		  <li>也可以放html, 圖片</li>
 		</ul>
+		
 		<h1>Youtube</h1>
 		<iframe width="480" height="320" src="https://www.youtube.com/embed/QVgK9MJrA-g?playlist=h_1xYs6VTII,vViSeEUGM9g" frameborder="0" allowfullscreen></iframe>
-		<iframe width="480" height="320" src="https://www.youtube.com/embed/videoseries?list=PLXyh3UMqRuQ3dFwEKAMNX3QYxLP96tmN1&index=1"   frameborder="0"  allowfullscreen></iframe>
+		<iframe width="480" height="320" src="https://www.youtube.com/embed/videoseries?list=PLXyh3UMqRuQ3dFwEKAMNX3QYxLP96tmN1" frameborder="0" allowfullscreen></iframe>
 		<ul>
 		  <li><span class="emphasize-1">&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID"  frameborder="0"  allowfullscreen&gt;</span></li>
 		  <li>自動播放 : ?autoplay=1</li>
@@ -67,6 +71,7 @@
 		  <li>播放清單 : ?playlist=VIDEO1_ID,VIDEO2_ID</li>
 		  <li>已存在的播放清單 : https://www.youtube.com/embed/videoseries?list=LIST_ID&index=VIDEO_INDEX</li>
 		  <li>一些問號開頭的控制參數, 在遇到list的時候要把?改成&才會有效</li>
+		  <li>有些影片在local端測試的時候會因版權問題不給播放, 但放上github後就可以了</li>
 		</ul>
 		<div id="muteYouTubeVideoPlayer"></div> 
 		<script async src="https://www.youtube.com/iframe_api"></script>
