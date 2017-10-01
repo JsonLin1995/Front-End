@@ -60,8 +60,8 @@ a.logo{
 .leftnav-container{
 	height: 100%;
 	line-height: 30px;
-	font-size: 18pt;
-	padding-top: 30px;
+	font-size: 15pt;
+	padding-top: 5px;
 }
 .leftnav-container a{
 	padding-top: 2px;
@@ -91,6 +91,14 @@ a.logo{
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-left: 16px;
+	display: block;
+}
+.leftnav-container .block-header{
+	color: #000000;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	padding-left: 16px;
+	font-size: 18pt;
 	display: block;
 }
 #content{	

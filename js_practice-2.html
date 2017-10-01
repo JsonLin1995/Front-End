@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/main-struct.css" />
   <script defer src="js/load_left_nav.js"></script>
+  <script defer src="js/js_practice-2.js"></script>
 </head>
 <body>
   <div id="header" >
@@ -20,7 +21,20 @@
   <div id="content" class="content" >
 	<div id="main" >			
 	  <div id="main-1" >
-		<span class="update-message">更新 : </span>
+		<span class="update-message">更新 : 2017/10/1</span>
+		<h1>用Javascript檢查表格內容</h1>
+		<form name="form-1" action="" onsubmit="return validateForm()" method="get">
+		  <span>Name : </span><input type="text" name="username" />
+		  <input type="submit" value="Submit" />
+		</form>
+		<div id="msg-1">
+		</div>
+		<ul>
+		  <li>&lt;form onsubmit="return validateForm()"&gt;</li>
+		  <li>發現條件不合的狀況, validateForm() return false</li>
+		  <li>用document.forms[FORM_NAME][INPUT_NAME].value來抓input的值, 用的是name</li>
+		  <li><a href="https://www.w3schools.com/js/js_validation.asp" target="_blank">ref</a></li>
+		</ul>
 	  </div>
 	  <div id="rightbar" >				
 	  </div>
