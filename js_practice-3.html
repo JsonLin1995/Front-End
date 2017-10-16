@@ -27,13 +27,15 @@
 		<div id="demo-1"></div>
 		<script>
 			function clickButton() {
+				var obj = {name: "Amy", age: 30};
+				var param = JSON.stringify(obj);
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 					if (this.readyState == 4 && this.status == 200) {
 						document.getElementById("demo-1").innerHTML = this.responseText;
 					}
 				};
-				xhttp.open("GET", "php/jsonp.php", true);
+				xhttp.open("GET", "php/jsonp.php?x=" + param, true);
 				xhttp.send();
 				/*var s = document.createElement("script");
 				s.src = "php/jsonp.php?callback=displayFunction";

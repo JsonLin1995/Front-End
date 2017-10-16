@@ -7,7 +7,8 @@ function loadLeftNav () {
 		{type: "link", filename: "practice-4.html", content: "Practice 4"},		
 		{type: "header", filename: "", content: "Javascript"},
 		{type: "link", filename: "js_practice-1.html", content: "Practice 1"},
-		{type: "link", filename: "js_practice-2.html", content: "Practice 2"}];
+		{type: "link", filename: "js_practice-2.html", content: "Practice 2"},
+		{type: "link", filename: "js_practice-3.html", content: "Practice 3"}];
 	
 	var i = 0,
 		l = navContent.length,
