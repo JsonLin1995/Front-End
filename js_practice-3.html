@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Front End Practice</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main-struct.css" />
+  <script defer src="js/load_left_nav.js"></script>
+</head>
+<body>
+  <div id="header" >
+	<div class="header-container" >
+	  <a class="logo" href="index.html" >Json's Front End Practice</a>
+	</div>
+  </div>
+  <div id="leftnav" class="leftnav" >
+	<div id="leftnav-container" class="leftnav-container" >
+	</div>
+  </div>
+  <div id="content" class="content" >
+	<div id="main" >			
+	  <div id="main-1" >
+		<span class="update-message">更新 : 2017/10/16</span>
+		
+		<h1>JSONP</h1>
+		<button onclick="clickButton()">Try</button>
+		<div id="demo-1"></div>
+		<script>
+			function clickButton() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("demo-1").innerHTML = this.responseText;
+					}
+				};
+				xhttp.open("GET", "php/jsonp.php", true);
+				xhttp.send();
+				/*var s = document.createElement("script");
+				s.src = "php/jsonp.php?callback=displayFunction";
+				document.body.appendChild(s);*/
+			}
+			function displayFunction (myObj) {
+				document.getElementById("demo-1").innerHTML = myObj.name;
+			}
+		</script>
+	  </div>
+	  <div id="rightbar" >				
+	  </div>
+	</div>
+	<div id="footer" >
+	  <hr>
+	  <div class="footer-container" >
+		&copy;2017&nbsp;&nbsp;&nbsp;stu900277@gmail.com
+	  </div>
+	</div>
+  </div>
+</body>
+</html>
