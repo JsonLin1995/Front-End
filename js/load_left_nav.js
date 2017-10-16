@@ -7,14 +7,12 @@ function loadLeftNav () {
 		{type: "link", filename: "practice-4.html", content: "Practice 4"},		
 		{type: "header", filename: "", content: "Javascript"},
 		{type: "link", filename: "js_practice-1.html", content: "Practice 1"},
-		{type: "link", filename: "js_practice-2.html", content: "Practice 2"}
-	];
+		{type: "link", filename: "js_practice-2.html", content: "Practice 2"}];
 	
 	var i = 0,
 		l = navContent.length,
 		filename = window.location.pathname.split("/").pop(),
-		output = "",
-		element = document.getElementById("leftnav-container");
+		output = "";
 		
 	for (i=0; i<l; i++) {
 		if (navContent[i].type == "header") {
@@ -30,7 +28,7 @@ function loadLeftNav () {
 			}
 		}
 	}
-	element.innerHTML = output;
+	document.getElementById("leftnav-container").innerHTML = output;
 }
 
 loadLeftNav();

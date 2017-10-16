@@ -10,3 +10,20 @@ function validateForm () {
 		return true;
 	}
 }
+
+function domValidate () {
+	if (document.getElementById("input-1").checkValidity() == false) {
+		document.getElementById("msg-2").innerHTML = inp.validationMessage;
+	}
+	else {
+		document.getElementById("msg-2").innerHTML = "Valid input";
+	}
+}
+
+function validityProp () {
+	var msg = "";
+	if (document.getElementById("input-2").validity.rangeOverflow) {
+		msg = "Value too large";		
+	}
+	document.getElementById("msg-3").innerHTML = msg;
+}

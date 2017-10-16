@@ -22,19 +22,45 @@
 	<div id="main" >			
 	  <div id="main-1" >
 		<span class="update-message">更新 : 2017/10/1</span>
-		<h1>用Javascript檢查表格內容</h1>
+		
+		<h1>檢查表格內容</h1>
 		<form name="form-1" action="" onsubmit="return validateForm()" method="get">
-		  <span>Name : </span><input type="text" name="username" />
+		  <span>Name : </span><input type="text" name="username" /><br>
+		  <span>Age : </span><input type="number" name="userage" max="10" /><br>
 		  <input type="submit" value="Submit" />
 		</form>
-		<div id="msg-1">
-		</div>
+		<div id="msg-1"></div>
 		<ul>
 		  <li>&lt;form onsubmit="return validateForm()"&gt;</li>
 		  <li>發現條件不合的狀況, validateForm() return false</li>
 		  <li>用document.forms[FORM_NAME][INPUT_NAME].value來抓input的值, 用的是name</li>
+		  <li>也可在input tag裡加上required, min, max等屬性, submit時會自動檢查欄位</li>
 		  <li><a href="https://www.w3schools.com/js/js_validation.asp" target="_blank">ref</a></li>
 		</ul>
+		
+		<h1>JavaScript Validation API</h1>
+		<span>Valid Number (100~300) : </span>
+		<input id="input-1" type="number" min="100" max="300" required />
+		<button onclick="domValidate()">Check</button>
+		<div id="msg-2"></div>
+		<ul>
+		  <li>用dom validaity method : checkValidity()</li>
+		  <li>validationMessage可用預設的, 也可自己修改</li>
+		  <li><a href="https://www.w3schools.com/js/js_validation_api.asp">ref</a></li>
+		</ul>
+		<span>Valid Number (<=100) : </span>
+		<input id="input-2" type="number" max="100" required />
+		<button onclick="validityProp()">Check</button>
+		<div id="msg-3"></div>
+		<ul>
+		  <li>用validity property, 針對各種情況給出提示訊息</li>
+		</ul>
+		
+		<p id="p-1"></p>
+		<img id="img-1" src="image/catpoo.gif" />
+		<script>
+			document.getElementById("p-1").innerHTML = document.lastModified;
+		</script>
 	  </div>
 	  <div id="rightbar" >				
 	  </div>
