@@ -1,13 +1,14 @@
 function loadLeftNav () {
 	var navContent = [
 		{type: "header", filename: "", content: "HTML"},
-		{type: "link", filename: "practice-1.html", content: "Practice 1"},
-		{type: "link", filename: "practice-2.html", content: "Practice 2"},
-		{type: "link", filename: "practice-3.html", content: "Practice 3"},
-		{type: "link", filename: "practice-4.html", content: "Practice 4"},		
+		{type: "link", filename: "practice-1.html", content: "Tags"},
+		{type: "link", filename: "practice-2.html", content: "Graphics"},
+		{type: "link", filename: "practice-3.html", content: "Media"},
+		{type: "link", filename: "practice-4.html", content: "APIs"},		
 		{type: "header", filename: "", content: "Javascript"},
-		{type: "link", filename: "js_practice-1.html", content: "Practice 1"},
-		{type: "link", filename: "js_practice-2.html", content: "Practice 2"}];
+		{type: "link", filename: "js_practice-1.html", content: "Google apps script"},
+		{type: "link", filename: "js_practice-2.html", content: "Input validation"},
+		{type: "link", filename: "js_practice-3.html", content: "Color Picker"}];
 	
 	var i = 0,
 		l = navContent.length,
