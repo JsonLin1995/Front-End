@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Front End Practice</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main-struct.css" />
+  <link rel="stylesheet" href="css/css_practice-1.css" />
+  <link rel="shortcut icon" href="image/favicon.png"/>
+  <script defer src="js/load_left_nav.js"></script>
+</head>
+<body>
+  <div id="header" >
+	<div class="header-container" >
+	  <a class="logo" href="index.html" >Json's Front End Practice</a>
+	</div>
+  </div>
+  <div id="leftnav" class="leftnav" >
+	<div id="leftnav-container" class="leftnav-container" >
+	</div>
+  </div>
+  <div id="content" class="content" >
+	<div id="main" >			
+	  <div id="main-1" >
+      <span class="update-message">更新 : 2017/10/29</span>
+      
+      <h1>Horizontal Dropdown Menu</h1>
+      <div id="section1">
+        <ul>		  
+          <li class="dropdown"><a href="#">Home</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">News</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">Contact</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <ul>
+        <li>dropdown-content的position設為absolute，是以body為基準，所以上層元素不用設為relative，否則會被塞在水平的menu裡</li>
+      </ul>
+      
+      <h1>Tooltip</h1>
+      <div id="section2">
+        <span class="tooltip">Hover on me
+          <span class="tooltipTextTop">Hello there!</span>
+          <span class="tooltipTextRight">How are you doing?</span>
+        </span>
+      </div>
+      <ul>
+        <li>position設為absolute的inline element似乎會自己加上block屬性</li>
+        <li>將tooltip設寬度，對齊hover的50%，然後margin設負的(0.5tooltip寬度)，讓tooltip可以置中對齊</li>
+        <li>用opacity transition做淡入淡出動畫，但似乎要用visibility才會有效，display無法</li>
+        <li><a href="https://www.w3schools.com/css/css_tooltip.asp" target="_blank">ref</a></li>
+      </ul>
+	  </div>
+	  <div id="rightbar" >				
+	  </div>
+	</div>
+	<div id="footer" >
+	  <hr>
+	  <div class="footer-container" >
+		&copy;2017&nbsp;&nbsp;&nbsp;stu900277@gmail.com
+	  </div>
+	</div>
+  </div>
+</body>
+</html>

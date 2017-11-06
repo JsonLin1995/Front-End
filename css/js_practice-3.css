@@ -7,8 +7,7 @@
 	text-align: left;
 }
 #colorOutput {
-	width: 300px;
-	max-width: 100%;
+	max-width: 300px;
 	height: 100px;
 	margin-top: 40px;
 	margin-left: auto;
@@ -16,5 +15,5 @@
 	margin-bottom: 0px;
 	text-align: center;
 	line-height: 100px;
-	font-family: courier;
+	font-family: courier, monospace;
 }

@@ -8,7 +8,9 @@ function loadLeftNav () {
 		{type: "header", filename: "", content: "Javascript"},
 		{type: "link", filename: "js_practice-1.html", content: "Google apps script"},
 		{type: "link", filename: "js_practice-2.html", content: "Input validation"},
-		{type: "link", filename: "js_practice-3.html", content: "Color Picker"}];
+		{type: "link", filename: "js_practice-3.html", content: "Color Picker"},
+		{type: "header", filename: "", content: "CSS"},
+		{type: "link", filename: "css_practice-1.html", content: "Various Practice"}];
 	
 	var i = 0,
 		l = navContent.length,

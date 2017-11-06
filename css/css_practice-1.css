@@ -1,0 +1,135 @@
+#section1 a {
+	text-decoration: none;
+}
+
+#section1 ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#section1>ul {
+	overflow: hidden;
+	background-color: #ddd;
+}
+
+#section1>ul>li {
+	display: inline-block;
+}
+
+#section1>ul>li>a {
+	display: block;
+	padding: 5px 10px;
+}
+
+#section1>ul>li>a:hover {
+	color: #fff;
+	background-color: #333;
+}
+
+#section1 .dropdown:hover>a {
+	color: #fff;
+	background-color: #333;
+}
+
+#section1 .dropdown:hover .dropdown-content {
+	display: block;
+}
+
+#section1 .dropdown-content {
+	position: absolute;
+	background-color: #fff;
+	z-index: 2;
+	box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+	min-width: 100px;
+	display: none;
+}
+
+#section1 .dropdown-content a {
+	display: block;
+	padding: 5px 10px;
+}
+
+#section1 .dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+#section2 .tooltip {
+	position: relative;
+}
+
+#section2 .tooltipTextTop {
+	/display: none;
+	visibility: hidden;
+	position: absolute;
+	top: 120%;
+	left: 50%;
+	width: 120px;
+	margin-left: -60px;
+	padding: 5px;
+	text-align: center;
+	background-color: #000;
+	color: #fff;
+	border-radius: 5px;
+	z-index: 1;
+	
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+#section2 .tooltipTextRight {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 120%;
+	width: 100px;
+	height: 50px;
+	margin-top: -25px;
+	padding: 5px;
+	text-align: center;
+	background-color: #000;
+	color: #fff;
+	border-radius: 5px;
+	z-index: 1;
+	
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+#section2 .tooltip:hover {
+	cursor: pointer;
+}
+
+#section2 .tooltip:hover .tooltipTextTop { 
+	/display: block;	
+	visibility: visible;
+	opacity: 1;
+}
+
+#section2 .tooltip:hover .tooltipTextRight { 
+	display: block;	
+	opacity: 1;
+}
+
+/* Add the arrow */
+#section2 .tooltipTextTop::after {
+	content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+#section2 .tooltipTextRight::after {
+	content: "";
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
