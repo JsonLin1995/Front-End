@@ -20,24 +20,24 @@
 	</div>
   </div>
   <div id="content" class="content" >
-	<div id="main" >			
+	<div id="main" >
 	  <div id="main-1" >
 	    <span class="update-message">更新 : 2017/9/7</span>
-		
-		<h1>Google Maps API</h1>		
+
+		<h1>Google Maps API</h1>
 		<button onclick="getLocation()">Get Location</button><br><br>
 		<div id="msg"></div>
 		<div id="mapholder"></div>
 		<script src="https://maps.google.com/maps/api/js?key=AIzaSyBUDpnygZxx51g2xh3othDTdABCqMLbjUM"></script>
 		<script>
-		var x = document.getElementById("msg");
+    var x = document.getElementById("msg");
 		function getLocation() {
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(showPosition, showError);
-			} else { 
+			} else {
 				x.innerHTML = "Geolocation is not supported by this browser.";
 			}
-		}
+		}    
 
 		function showPosition(position) {
 			var lat = position.coords.latitude;
@@ -53,11 +53,11 @@
 			mapTypeControl:false,
 			navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
 			}
-			
+
 			var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
 			var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
 		}
-
+		
 		function showError(error) {
 			switch(error.code) {
 				case error.PERMISSION_DENIED:
@@ -79,7 +79,7 @@
 		  <li>要先弄個<a href="https://console.developers.google.com">API Key</a>(Google Maps JavaScript API), 有配額限制</li>
 		  <li><a href="https://www.w3schools.com/html/html5_geolocation.asp" target="_blank">ref</a>
 		</ul>
-		
+
 		<h1>Drag/Drop</h1>
 		<script>
 		function drag(ev){
@@ -101,14 +101,14 @@
 		<ul class="clear-float">
 		  <li>被拖移的物件要有id</li>
 		</ul>
-		
+
 		<h1>Local Storage/Session Storage</h1>
 		<input id="input-msg" type="text" placeholder="說點什麼..." autofocus />
 		<button onclick="setLocalStorage()">Commit</button><br><br>
 		<div id="msg-2"></div>
 		<script>
 		var msg = localStorage.getItem("message");
-		if( typeof( Storage ) !== "undefined" ){			
+		if( typeof( Storage ) !== "undefined" ){
 			if( msg != null ){
 				document.getElementById("msg-2").innerHTML = "至理名言 : " + msg;
 			}
@@ -118,14 +118,14 @@
 		}
 		else{
 			document.getElementById("msg-2").innerHTML = "Sorry, your browser does not support Web Storage...";
-		}		
+		}
 		function setLocalStorage(){
 			var input = document.getElementById("input-msg").value;
 			if( input != "" ){
 				localStorage.setItem( "message", input );
 				//localStorage.message = document.getElementById("input-msg").value;
 				document.getElementById("msg-2").innerHTML = "至理名言 : " + localStorage.getItem("message");
-				//document.getElementById("msg-2").innerHTML = localStorage.message;				
+				//document.getElementById("msg-2").innerHTML = localStorage.message;
 			}
 		}
 		</script>
@@ -134,14 +134,14 @@
 		  <li>localStorage跟sessionStorage只差在儲存期限, 前者無限, 後者在網頁關閉後就清掉</li>
 		  <li><a href="https://www.w3schools.com/html/html5_webstorage.asp" target="_blank">ref</a></li>
 		</ul>
-		
+
 		<h1>Web Worker</h1>
 		<p>Counter : <span id="msg-3"></span></p>
 		<button onclick="startWorker()">Start</button>
 		<button onclick="stopWorker()">Stop</button>
 		<script>
 		var w;
-		
+
 		function startWorker(){
 			if( typeof(Worker) !== "undefined" ){
 				if( typeof(w) == "undefined" ){
@@ -150,12 +150,12 @@
 				w.onmessage = function(event){
 					document.getElementById("msg-3").innerHTML = event.data;
 				}
-			} 
+			}
 			else{
 				document.getElementById("msg-3").innerHTML = "Sorry! No Web Worker support.";
 			}
 		}
-		
+
 		function stopWorker(){
 			w.terminate();
 			w = undefined;
@@ -166,7 +166,7 @@
 		  <li>chrome在local端測試時會跳錯誤訊息, 其他瀏覽器不會, 憨</li>
 		  <li><a href="https://www.w3schools.com/html/html5_webworkers.asp" target="_blank">ref</a></li>
 		</ul>
-		
+
 		<h1>Server-Sent Events (SSE)</h1>
 		<ul>
 		  <li>自動更新從server送來的訊息, 有點類似等Web Worker外部js送訊息進來(onmessage)</li>
@@ -174,7 +174,7 @@
 		  <li><a href="https://www.w3schools.com/html/html5_serversentevents.asp" target="_blank">ref</a></li>
 		</ul>
 	  </div>
-	  <div id="rightbar" >				
+	  <div id="rightbar" >
 	  </div>
 	</div>
 	<div id="footer" >
